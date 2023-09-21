@@ -1,0 +1,22 @@
+{
+  "builders": [],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "./configs",
+      "destination":"/tmp/configs"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "inline": [
+        "echo '<>----: Provisioner: Fresh'",
+        "export TERM=xterm",
+        "echo 'Waiting for cloud-init to finish, this can take a few minutes please be patient...'",
+        "/usr/bin/cloud-init status --wait",
+        "fallocate -l 2G /swap && chmod 600 /swap && mkswap /swap && swapon /swap",
+        "echo '/swap none swap sw 0 0' | sudo tee -a /etc/fstab"
+      ], "inline_shebang": "/bin/sh -x",
+	  "type": "shell"
+    }
+  ]
+}
