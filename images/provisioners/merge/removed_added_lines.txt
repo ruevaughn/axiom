@@ -1,0 +1,96 @@
+=== Removed Lines ===
+/bin/su -l op -c '/usr/local/go/bin/go  clean -modcache'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/003random/getJS@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/KathanP19/Gxss@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/ffuf/ffuf@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/gwen001/github-endpoints@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/gwen001/github-subdomains@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/haccer/subjack@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/hakluke/hakrawler@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/hakluke/hakrevdns@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/jaeles-project/gospider@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/m4dm0e/dirdar@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/projectdiscovery/katana/cmd/katana@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/sensepost/gowitness@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/anew@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/fff@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/gron@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/hacks/concurl@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/hacks/kxss@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/httprobe@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/meg@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/qsreplace@latest'
+/bin/su -l op -c '/usr/local/go/bin/go install github.com/tomnomnom/waybackurls@latest'
+/bin/su -l op -c 'GO111MODULE=off /usr/local/go/bin/go install github.com/tomnomnom/gf@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install -v github.com/bp0lr/gauplus@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install -v github.com/lc/subjs@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/Cgboal/exclude-cdn@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/d3mondev/puredns/v2@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/hahwul/dalfox/v2@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/jaeles-project/jaeles@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/lc/gau/v2/cmd/gau@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/chaos-client/cmd/chaos@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/httpx/cmd/httpx@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/interactsh/cmd/interactsh-client@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/naabu/v2/cmd/naabu@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest && /home/op/go/bin/nuclei'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest'
+/bin/su -l op -c 'GO111MODULE=on /usr/local/go/bin/go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest'
+/bin/su -l op -c 'docker image build - < /home/op/lists/axiom-dockerfiles/gorgo/Dockerfile -t axiom/gorgo'
+cd /tmp && git clone https://github.com/EnableSecurity/wafw00f && cd wafw00f && sudo python3 setup.py install
+cd /tmp && git clone https://github.com/s0md3v/Arjun && cd Arjun && sudo python3 setup.py install && cd
+cd /tmp && wget -q -O /tmp/gobuster.7z https://github.com/OJ/gobuster/releases/download/v3.1.0/gobuster-linux-amd64.7z && p7zip -d /tmp/gobuster.7z && sudo mv /tmp/gobuster-linux-amd64/gobuster /usr/bin/gobuster && sudo chmod +x /usr/bin/gobuster
+echo "CgpDb25ncmF0dWxhdGlvbnMsIHlvdXIgYnVpbGQgaXMgYWxtb3N0IGRvbmUhCgogICAgICAgICAgICAgYXhpb20gaXMgc3BvbnNvcmVkIGJ5Li4uCl9fX18gICAgICAgICAgICAgICAgICAgICAgIF8gXyAgICAgICAgX19fX18uICAgICAgICAgXyBfCi8gX19ffCAgX19fICBfX18gXyAgIF8gXyBfXyhfKSB8XyBfICAgfF8gICBffCBfXyBfXyBfKF8pIHxfX18KXF9fXyBcIC8gXyBcLyBfX3wgfCB8IHwgJ19ffCB8IF9ffCB8IHwgfHwgfHwgJ19fLyBfYCB8IHwgLyBfX3wKIF9fXykgfCAgX18vIChfX3wgfF98IHwgfCAgfCB8IHxffCB8X3wgfHwgfHwgfCB8IChffCB8IHwgXF9fIFwKfF9fX18vIFxfX198XF9fX3xcX18sX3xffCAgfF98XF9ffFxfXywgfHxffHxffCAgXF9fLF98X3xffF9fXy8KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHxfX18vCgpSZWFkIHRoZXNlIHdoaWxlIHlvdSdyZSB3YWl0aW5nIHRvIGdldCBzdGFydGVkIDopCgogICAgLSBRdWlja3N0YXJ0IEd1aWRlOiBodHRwczovL2dpdGh1Yi5jb20vcHJ5MGNjL2F4aW9tL3dpa2kvQS1RdWlja3N0YXJ0LUd1aWRlCiAgICAtIEZpbGVzeXN0ZW0gVXRpbGl0aWVzOiBodHRwczovL2dpdGh1Yi5jb20vcHJ5MGNjL2F4aW9tL3dpa2kvRmlsZXN5c3RlbS1VdGlsaXRpZXMKICAgIC0gRmxlZXRzOiBodHRwczovL2dpdGh1Yi5jb20vcHJ5MGNjL2F4aW9tL3dpa2kvRmxlZXRzICAgICAKICAgIC0gU2NhbnM6IGh0dHBzOi8vZ2l0aHViLmNvbS9wcnkwY2MvYXhpb20vd2lraS9TY2FucwoKCg==" | base64 -d
+echo 'Installing gobuster'
+echo 'Installing google-chrome'
+echo 'Installing gorgo'
+echo 'Installing gospider'
+echo 'Installing gowitness'
+echo 'Installing ufw fail2ban net-tools zsh jq build-essential python3-pip unzip git p7zip libpcap-dev rubygems ruby-dev grc'
+export GOPATH=/home/op/go
+git clone https://github.com/codingo/Interlace.git /home/op/recon/interlace && cd /home/op/recon/interlace/ && python3 setup.py install
+git clone https://github.com/vortexau/dnsvalidator.git /home/op/recon/dnsvalidator && cd /home/op/recon/dnsvalidator/ && sudo python3 setup.py install
+mkdir -p /home/op/.ssh /home/op/c2 /home/op/recon/ /home/op/lists /home/op/go /home/op/bin /home/op/.config/ /home/op/.cache /home/op/work/ /home/op/.config/amass
+sudo apt install fail2ban ufw net-tools zsh zsh-syntax-highlighting zsh-autosuggestions jq build-essential python3-pip unzip git p7zip libpcap-dev rubygems ruby-dev grc -y -qq
+wget -q -O /tmp/DNSCewl https://github.com/codingo/DNSCewl/raw/master/DNScewl && mv /tmp/DNSCewl /usr/bin/DNSCewl && chmod +x /usr/bin/DNSCewl
+wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && cd /tmp/ && sudo apt install -y /tmp/chrome.deb -qq && apt --fix-broken install -qq
+wget -q https://golang.org/dl/go1.20.4.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz && rm go1.20.4.linux-amd64.tar.gz
+
+=== Added Lines ===
+/home/op/.asdf/bin/asdf current
+/home/op/.asdf/bin/asdf global golang 1.21.1
+/home/op/.asdf/bin/asdf global nodejs 20.6.1
+/home/op/.asdf/bin/asdf global python 3.9.18
+/home/op/.asdf/bin/asdf global ruby 3.2.2
+/home/op/.asdf/bin/asdf install golang 1.21.1
+/home/op/.asdf/bin/asdf install nodejs 20.6.1
+/home/op/.asdf/bin/asdf install python 3.9.18
+/home/op/.asdf/bin/asdf install ruby 3.2.2
+/home/op/.asdf/bin/asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+/home/op/.asdf/bin/asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+/home/op/.asdf/bin/asdf plugin add python https://github.com/danhper/asdf-python.git
+/home/op/.asdf/bin/asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+/home/op/.asdf/bin/asdf reshim golang
+/home/op/.asdf/bin/asdf reshim nodejs
+/home/op/.asdf/bin/asdf reshim python
+/home/op/.asdf/bin/asdf reshim ruby
+EOF
+apt install coreutils
+apt-get install -y dirmngr gpg curl gawk
+asdf current
+chown -R op:users /home/op/
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+echo '. ~/.asdf/plugins/golang/set-env.zsh' >> /home/op/.zshrc
+echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections
+echo set debconf to Noninteractive
+export PATH=$/home/op/.asdf/bin:/home/op/.asdf/shims:$PATH
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+source /home/op/.zshrc
+sudo -i -u op <<'EOF'
+sudo apt update; sudo apt install -y build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+sudo apt-get -y install autoconf patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
+sudo apt-get install fail2ban ufw net-tools zsh zsh-syntax-highlighting zsh-autosuggestions jq build-essential unzip git p7zip libpcap-dev grc -y -qq
+wget -q https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O - | sh

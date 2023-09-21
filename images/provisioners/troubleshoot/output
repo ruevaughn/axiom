@@ -1,0 +1,92 @@
+11:08:22  ⚡ 10861  .axiom   autocomplete-bash ⚑ ●  axiom-build fresh
+Now your account is setup, now running axiom-build
+A build will take about 25 minutes, spin up a temporary instance, and then snapshot it to use for our future boxes
+Starting Build in 5 seconds... Ctrl+C to quit, remember, you can just type axiom-build at any time
+Setting axiom provider to 'do'
+Provider set successfully
+/var/lib/gems/3.0.0/gems/json-2.6.3/lib/json/common.rb:216:in `parse': unexpected token at '], "inline_shebang": "/bin/sh -x", (JSON::ParserError)
+	  "type": "shell"
+    }
+  ]
+}
+'
+	from /var/lib/gems/3.0.0/gems/json-2.6.3/lib/json/common.rb:216:in `parse'
+	from /root/.axiom/interact/generate_packer:12:in `<main>'
+Adding axiom_rsa SSH key to Packer Builder
+Password for user op is stored in /root/.axiom/accounts/personal.json, for your records
+{
+  "do_key": "************************************************************************",
+  "region": "nyc1",
+  "provider": "do",
+  "default_size": "s-1vcpu-1gb",
+  "appliance_name": "",
+  "appliance_key": "",
+  "appliance_url": "",
+  "email": "",
+  "sshkey": "axiom_rsa",
+  "op": "r1ukDV8cVOWjMgri1OCmtd82P4XYWYvQqOX2tXiC4Zs1Rkmz0Ldv2Rkv4bDIr8UArhWp5gX0LFSfTARMg2IuDGqkJKgoIq2cJPlgEk65FVhYyC6rHSSyygvCoGwK",
+  "imageid": "axiom-mp-1695121382",
+  "provisioner": "mp"
+}
+Building image fresh for provider do... This can take up to 25 minutes so please be patient!
+If this fails, verify the account is properly configured and/or try a different region.
+digitalocean: output will be in this color.
+
+==> digitalocean: Creating temporary RSA SSH key for instance...
+Cancelling build after receiving interrupt
+Build 'digitalocean' finished after 3 seconds 638 milliseconds.
+
+==> Wait completed after 3 seconds 638 milliseconds
+Cleanly cancelled builds after being interrupted.
+Your build failed :( Please take a look at the errors!
+This can happen sometimes, if you have a [404] error while using Linode, this is likely because you need to request support for a larger image size to 18GB!
+For support, take a screenshot of the last 20 lines and open a issue at https://github.com/pry0cc/axiom/issues
+Sometimes just running a build again can work, so please try at least once: 'axiom-build', thanks!
+11:10:16  ⚡ 10862  .axiom   autocomplete-bash ⚑ ●  axiom-build fresh
+Now your account is setup, now running axiom-build
+A build will take about 25 minutes, spin up a temporary instance, and then snapshot it to use for our future boxes
+Starting Build in 5 seconds... Ctrl+C to quit, remember, you can just type axiom-build at any time
+Setting axiom provider to 'do'
+Provider set successfully
+/var/lib/gems/3.0.0/gems/json-2.6.3/lib/json/common.rb:216:in `parse': unexpected token at '], "inline_shebang": "/bin/sh -x", (JSON::ParserError)
+	  "type": "shell"
+    }
+  ]
+}
+'
+	from /var/lib/gems/3.0.0/gems/json-2.6.3/lib/json/common.rb:216:in `parse'
+	from /root/.axiom/interact/generate_packer:12:in `<main>'
+Adding axiom_rsa SSH key to Packer Builder
+Password for user op is stored in /root/.axiom/accounts/personal.json, for your records
+{
+  "do_key": "************************************************************************",
+  "region": "nyc1",
+  "provider": "do",
+  "default_size": "s-1vcpu-1gb",
+  "appliance_name": "",
+  "appliance_key": "",
+  "appliance_url": "",
+  "email": "",
+  "sshkey": "axiom_rsa",
+  "op": "Z6KXKaw39sYlNteporWYglFUEMlhhJ1RPHRHCrfjnp3OodHnSW9D9TsaH4FQhRNJ3BqIDdwvO7HtINwkRmXpcUsdPOeQ6AglbA8Yhckm4jvq5XygWclF",
+  "imageid": "axiom-fresh-1695121811",
+  "provisioner": "fresh"
+}
+Building image fresh for provider do... This can take up to 25 minutes so please be patient!
+If this fails, verify the account is properly configured and/or try a different region.
+digitalocean: output will be in this color.
+
+==> digitalocean: Creating temporary RSA SSH key for instance...
+==> digitalocean: Importing SSH public key...
+==> digitalocean: Creating droplet...
+==> digitalocean: Waiting for droplet to become active...
+==> digitalocean: Using SSH communicator to connect: 161.35.97.36
+==> digitalocean: Waiting for SSH to become available...
+==> digitalocean: Connected to SSH!
+==> digitalocean: Uploading ./configs => /tmp/configs
+==> digitalocean: Provisioning with shell script: /tmp/packer-shell3841866015
+    digitalocean: Waiting for cloud-init to finish, this can take a few minutes please be patient...
+    digitalocean: ................................................................................................
+    digitalocean: status: done
+    digitalocean: Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+    digitalocean: no label, UUID=97c7e72d-c265-4a2f-b8a1-989aa4ac60fa

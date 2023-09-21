@@ -1,0 +1,47 @@
+{
+    "builders": [],
+    "provisioners": [
+        {
+            "type": "file",
+            "source": "./configs",
+            "destination": "/tmp/configs"
+        },
+        {
+            "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+            "inline": [
+                "git clone https://github.com/anyenv/anyenv ~/.anyenv",
+                "export PATH=\"$HOME/.anyenv/bin:$PATH\"",
+                "echo 'export PATH=$HOME/.anyenv/bin:$PATH' >> ~/.zshrc",
+                "echo 'eval \"$(anyenv init -)\"' >> ~/.zshrc",
+                "~/.anyenv/bin/anyenv init",
+                "eval \"$(anyenv init -)\"",
+                "yes | anyenv install --init",
+                "# Anyenv Plugins",
+                "mkdir -p $(anyenv root)/plugins",
+                "git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update",
+                "git clone https://github.com/znz/anyenv-git.git $(anyenv root)/plugins/anyenv-git",
+                "# Python and Pyenv",
+                "anyenv install pyenv",
+                "pyenv install 3.9.18 && pyenv global 3.9.18 && pyenv rehash",
+                "# Pyenv Plugins",
+                "git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv",
+                "echo 'eval \"$(pyenv virtualenv-init -)\"' >> ~/.zshrc",
+                "git clone https://github.com/pyenv/pyenv-doctor.git $(pyenv root)/plugins/pyenv-doctor",
+                "# Ruby and Rbenv",
+                "anyenv install rbenv",
+                "eval \"$(anyenv init -)\"",
+                "rbenv install 3.2.2 && rbenv global 3.2.2 && rbenv rehash",
+                "# Goenv and GO",
+                "anyenv install goenv",
+                "eval \"$(anyenv init -)\"",
+                "goenv install 1.21.1 && goenv global 1.21.1 && goenv rehash",
+                "# Node and Npm",
+                "anyenv install nodenv",
+                "eval \"$(anyenv init -)\"",
+                "nodenv install 20.7.0 && nodenv global 20.7.0 && nodenv rehash"
+            ],
+            "inline_shebang": "/bin/sh -x",
+            "type": "shell"
+        }
+    ]
+}

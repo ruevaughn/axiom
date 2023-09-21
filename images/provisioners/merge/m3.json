@@ -1,0 +1,55 @@
+{
+  "builders": [],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "./configs",
+      "destination":"/tmp/configs"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "inline": [
+        "mkdir -p /home/op",
+        "set -x",
+        "exec &>> /home/op/script-run-output.log",
+        "echo \"Shell being used: $SHELL\"",
+
+        "echo 'Waiting for cloud-init to finish, this can take a few minutes please be patient...'",
+        "/usr/bin/cloud-init status --wait",
+
+        "echo 'Creating OP user'",
+        "useradd -G sudo -s /usr/bin/zsh -m op",
+        "chown -R op:users /home/op",
+        
+        "mv /tmp/configs/zshrc /home/op/.zshrc",  
+        "/bin/su -l op -c 'source /home/op/.zshrc'",
+        "mv /tmp/configs/sshd_config /etc/ssh/sshd_config",
+        "mv /tmp/configs/authorized_keys /home/op/.ssh/authorized_keys",
+        "chmod 644 /etc/resolv.conf",
+        "chattr +i /etc/resolv.conf",
+        "sudo service sshd restart",
+
+        "git clone https://github.com/anyenv/anyenv /home/op/.anyenv",
+        "/home/op/.anyenv/bin/anyenv init",
+        "/bin/su -l op -c 'export ANYENV_DEBUG=1 ; /home/op/.anyenv/bin/anyenv install --force-init'",
+
+        "/home/op/.anyenv/bin/anyenv install goenv",
+        "/home/op/.anyenv/envs/goenv/bin/goenv install 1.21.1 && /home/op/.anyenv/envs/goenv/bin/goenv global 1.21.1 && /home/op/.anyenv/envs/goenv/bin/goenv rehash",
+
+        "echo 'Optimizing SSH Connections'",
+        "/bin/su -l root -c 'echo \"ClientAliveInterval 60\" | sudo tee -a /etc/ssh/sshd_config'",
+        "/bin/su -l root -c 'echo \"ClientAliveCountMax 60\" | sudo tee -a /etc/ssh/sshd_config'",
+        "/bin/su -l root -c 'echo \"MaxSessions 100\" | sudo tee -a /etc/ssh/sshd_config'",
+        "/bin/su -l root -c 'echo \"net.ipv4.netfilter.ip_conntrack_max = 1048576\" | sudo tee -a /etc/sysctl.conf'",
+        "/bin/su -l root -c 'echo \"net.nf_conntrack_max = 1048576\" | sudo tee -a /etc/sysctl.conf'",
+        "/bin/su -l root -c 'echo \"net.core.somaxconn = 1048576\" | sudo tee -a /etc/sysctl.conf'",
+        "/bin/su -l root -c 'echo \"net.ipv4.ip_local_port_range = 1024 65535\" | sudo tee -a /etc/sysctl.conf'",
+        "/bin/su -l root -c 'echo \"1024 65535\" | sudo tee -a /proc/sys/net/ipv4/ip_local_port_range'", 
+        "chmod 600 /home/op/.ssh/authorized_keys",
+        
+        "chown root:root /etc/sudoers /etc/sudoers.d -R"
+      ], "inline_shebang": "/bin/bash -x",
+	  "type": "shell"
+    }
+  ]
+}

@@ -1,0 +1,2410 @@
+axiom-build mybarebones
+Debug: Provisioner set to: mybarebones
+Now your account is setup, now running axiom-build
+A build will take about 25 minutes, spin up a temporary instance, and then snapshot it to use for our future boxes
+Starting Build in 5 seconds... Ctrl+C to quit, remember, you can just type axiom-build at any time
+Setting axiom provider to 'do'
+Provider set successfully
+Adding axiom_rsa SSH key to Packer Builder
+Password for user op is stored in /root/.axiom/accounts/personal.json, for your records
+{
+  "do_key": "************************************************************************",
+  "region": "nyc1",
+  "provider": "do",
+  "default_size": "s-1vcpu-1gb",
+  "appliance_name": "",
+  "appliance_key": "",
+  "appliance_url": "",
+  "email": "",
+  "sshkey": "axiom_rsa",
+  "op": "u9B7lpudOInynjaq44DsGl7d6HCE6YXmwZAZ1G7hjJ12Kdq1NYlsze7duBPV1foLdHk4WePvsnMlDk38b2WIxpY3qqIonLC7ciaVeFNsmjLrIDItO6SegbXJi0Nu",
+  "imageid": "axiom-mybarebones-1695170194",
+  "provisioner": "mybarebones"
+}
+Building image mybarebones for provider do... This can take up to 25 minutes so please be patient!
+If this fails, verify the account is properly configured and/or try a different region.
+Debug: Provisioner used in packer build: mybarebones
+digitalocean: output will be in this color.
+
+==> digitalocean: Creating temporary RSA SSH key for instance...
+==> digitalocean: Importing SSH public key...
+==> digitalocean: Creating droplet...
+==> digitalocean: Waiting for droplet to become active...
+==> digitalocean: Using SSH communicator to connect: 134.122.20.238
+==> digitalocean: Waiting for SSH to become available...
+==> digitalocean: Connected to SSH!
+==> digitalocean: Uploading ./configs => /tmp/configs
+==> digitalocean: Provisioning with shell script: /tmp/packer-shell1462667078
+    digitalocean: Shell being used: /bin/bash
+    digitalocean: Waiting for cloud-init to finish, this can take a few minutes please be patient...
+    digitalocean: .....................................................................
+    digitalocean: status: done
+    digitalocean: Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+    digitalocean: no label, UUID=93aa6e03-799c-4ea7-9ea1-1b6bed12ca0f
+    digitalocean: /swap none swap sw 0 0
+    digitalocean: Running dist-uprade
+    digitalocean: Installing ufw fail2ban net-tools zsh jq build-essential unzip git p7zip libpcap-dev grc
+    digitalocean: Rules updated
+    digitalocean: Rules updated (v6)
+    digitalocean: Rules updated
+    digitalocean: Rules updated (v6)
+    digitalocean: Firewall is active and enabled on system startup
+    digitalocean: Creating OP user
+    digitalocean: Cloning Oh My Zsh...
+==> digitalocean: From https://github.com/ohmyzsh/ohmyzsh
+==> digitalocean:  * [new branch]      master     -> origin/master
+    digitalocean: Branch 'master' set up to track remote branch 'master' from 'origin'.
+    digitalocean: /home/op
+    digitalocean:
+==> digitalocean: Already on 'master'
+    digitalocean: Looking for an existing zsh config...
+    digitalocean: Using the Oh My Zsh template file and adding it to /home/op/.zshrc.
+    digitalocean:
+    digitalocean:          __                                     __
+    digitalocean:   ____  / /_     ____ ___  __  __   ____  _____/ /_
+    digitalocean:  / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \
+    digitalocean: / /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / /
+    digitalocean: \____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/
+    digitalocean:                         /____/                       ....is now installed!
+    digitalocean:
+    digitalocean:
+    digitalocean: Before you scream Oh My Zsh! look over the `.zshrc` file to select plugins, themes, and options.
+    digitalocean:
+    digitalocean: • Follow us on Twitter: https://twitter.com/ohmyzsh
+    digitalocean: • Join our Discord community: https://discord.gg/ohmyzsh
+    digitalocean: • Get stickers, t-shirts, coffee mugs and more: https://shop.planetargon.com/collections/oh-my-zsh
+    digitalocean:
+    digitalocean: Run zsh to try it out.
+    digitalocean: PATH Before: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+    digitalocean: PATH After: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+    digitalocean: Moving Config files
+==> digitalocean: chattr: Operation not supported while reading flags on /etc/resolv.conf
+==> digitalocean: Cloning into '/home/op/.anyenv'...
+    digitalocean: PATH Before: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+    digitalocean: PATH After: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+==> digitalocean: zsh:1: no such file or directory: Op PATH Before: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+==> digitalocean: Password: su: Authentication failure
+    digitalocean: ZSHRC File Contents:
+    digitalocean: export TERM="xterm-256color"
+    digitalocean: export ZSH=/home/op/.oh-my-zsh
+    digitalocean: export EDITOR='vim'
+    digitalocean: export GOPATH=/home/op/go
+    digitalocean: export TERM="xterm-256color"
+    digitalocean: export HOME=/home/op
+    digitalocean: export PATH="$PATH:$HOME/.rvm/bin:/home/op/go/bin:/home/op/bin:/home/op/.local/bin:/usr/local/go/bin" # Add RVM to PATH for scripting
+    digitalocean: export BIG="/home/op/lists/seclists/Discovery/Web-Content/big.txt"
+    digitalocean: export WEB="/home/op/lists/seclists/Discovery/Web-Content/"
+    digitalocean: export DIRS_LARGE="/home/op/lists/seclists/Discovery/Web-Content/raft-large-directories.txt"
+    digitalocean: export DIRS_SMALL="/home/op/lists/seclists/Discovery/Web-Content/raft-small-directories.txt"
+    digitalocean: export FILES_LARGE="/home/op/lists/seclists/Discovery/Web-Content/raft-large-files.txt"
+    digitalocean: export FILES_SMALL="/home/op/lists/seclists/Discovery/Web-Content/raft-small-files.txt"
+    digitalocean: # added by pipsi (https://github.com/mitsuhiko/pipsi)
+    digitalocean:
+    digitalocean: # -------------------------------- aliases ---------------------------------
+    digitalocean: alias ls=" ls --color -sh"
+    digitalocean: alias wclone="wget -H -p -k"
+    digitalocean: alias nmap="grc nmap"
+    digitalocean: alias netstat="grc netstat"
+    digitalocean: alias ping="grc ping"
+    digitalocean: alias tail="grc tail"
+    digitalocean: alias ps="grc ps"
+    digitalocean:
+    digitalocean:
+    digitalocean: zstyle ':omz:update' mode auto
+    digitalocean: ZSH_THEME="mrtazz"
+    digitalocean: plugins=(encode64 dircycle z cp nmap common-aliases)
+    digitalocean:
+    digitalocean: source $ZSH/oh-my-zsh.sh
+    digitalocean: source ~/.profile
+    digitalocean: source $HOME/bin/tmux-splash.sh
+    digitalocean:
+    digitalocean: # -------------------------------- FUNCTIONS ---------------------------------
+    digitalocean: function find() {
+    digitalocean: 	if [ $# = 1 ];
+    digitalocean: 	then
+    digitalocean: 		command find . -iname "*$@*"
+    digitalocean: 	else
+    digitalocean: 		command find "$@"
+    digitalocean: 	fi
+    digitalocean: }
+    digitalocean: function bin2sc() {
+    digitalocean:     # convert .bin to shellcode
+    digitalocean:     hexdump -v -e '"\\""x" 1/1 "%02x" ""' ${1}
+    digitalocean: }
+    digitalocean: function dirs() {
+    digitalocean:         name=$(echo $1 | unfurl -u domains)
+    digitalocean:         x=$(date +%Y%m%d%H%M%S)
+    digitalocean:         mkdir -p ~/work
+    digitalocean:         mkdir -p ~/work/$name
+    digitalocean:         ffuf -w $FILES_LARGE -u $1FUZZ -D -e asp,aspx,cgi,cfml,CFM,htm,html,json,jsp,php,phtml,pl,py,sh,shtml,sql,txt,xml,xhtml,tar,tar.gz,tgz,war,zip,swp,src,jar,java,log,bin,js,db -t 150 -o ~/work/$name/$name_$x.json
+    digitalocean: }
+    digitalocean:
+    digitalocean: function ctf-tools() {
+==> digitalocean: # Load anyenv automatically by adding
+    digitalocean:     sudo docker run --rm -it zardus/ctf-tools "$@"
+    digitalocean: }
+==> digitalocean: # the following to ~/.bash_profile:
+==> digitalocean:
+==> digitalocean: eval "$(anyenv init -)"
+==> digitalocean:
+    digitalocean:
+    digitalocean: function ciphey() {
+    digitalocean:     sudo docker run -it --rm remnux/ciphey "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function dockershell() {
+    digitalocean:     sudo docker run --rm -i -t --entrypoint=/bin/bash "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function dockershellsh() {
+    digitalocean:     sudo docker run --rm -i -t --entrypoint=/bin/sh "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function dockershellhere() {
+    digitalocean:     dirname=${PWD##*/}
+    digitalocean:     sudo docker run --rm -it --entrypoint=/bin/bash -v `pwd`:/${dirname} -w /${dirname} "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function dockershellshhere() {
+    digitalocean:     sudo docker run --rm -it --entrypoint=/bin/sh -v `pwd`:/${dirname} -w /${dirname} "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function dockerwindowshellhere() {
+    digitalocean:     dirname=${PWD##*/}
+    digitalocean:     sudo docker -c 2019-box run --rm -it -v "C:${PWD}:C:/source" -w "C:/source" "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function impacket() {
+    digitalocean:     sudo docker run --rm -it rflathers/impacket "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function intrigue-ident() {
+    digitalocean:     sudo docker run -t intrigueio/intrigue-ident -u "$@"
+    digitalocean: }
+    digitalocean:
+==> digitalocean: ANYENV_DEFINITION_ROOT(/root/.config/anyenv/anyenv-install) doesn't exist. You can initialize it by:
+    digitalocean: function smbservehere() {
+    digitalocean:     local sharename
+==> digitalocean: > anyenv install --init
+    digitalocean:     [[ -z $1 ]] && sharename="SHARE" || sharename=$1
+==> digitalocean: /tmp/script_3328.sh: 1: eval: source: not found
+    digitalocean:     sudo docker run --rm -it -p 445:445 -v "${PWD}:/tmp/serve" rflathers/impacket smbserver.py -smb2support $sharename /tmp/serve
+    digitalocean: }
+    digitalocean:
+    digitalocean: function nginxhere() {
+    digitalocean:     sudo docker run --rm -it -p 80:80 -p 443:443 -v "${PWD}:/srv/data" rflathers/nginxserve
+    digitalocean: }
+    digitalocean:
+    digitalocean: function webdavhere() {
+    digitalocean:     sudo docker run --rm -it -p 80:80 -v "${PWD}:/srv/data/share" rflathers/webdav
+    digitalocean: }
+    digitalocean:
+    digitalocean: function metasploit() {
+    digitalocean:     sudo docker run --rm -it  --network=host metasploitframework/metasploit-framework ./msfconsole "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function msfvenomhere() {
+    digitalocean:     sudo docker run --rm -it -v "${HOME}/.msf4:/home/msf/.msf4" -v "${PWD}:/data" metasploitframework/metasploit-framework ./msfvenom "$@"
+    digitalocean: }
+    digitalocean:
+    digitalocean: function postfiledumphere() {
+    digitalocean:     sudo docker run --rm -it -p80:3000 -v "${PWD}:/data" rflathers/postfiledump
+    digitalocean: }
+    digitalocean:
+    digitalocean: function reqdump() {
+    digitalocean:     sudo docker run --rm -it -p 80:3000 rflathers/reqdump
+    digitalocean: }
+    digitalocean:
+    digitalocean: function sn0int() {
+    digitalocean:     sudo docker run --rm --init -it -v "/home/op/.sn0int/.cache:/cache" -v "/home/op/.sn0int/.data:/data" kpcyrd/sn0int
+    digitalocean: }
+    digitalocean:
+    digitalocean: function do-axiom-ls() {
+    digitalocean:     /snap/bin/doctl compute droplet list | awk '{ print $2 " " $3 }' | column -t
+    digitalocean: }
+    digitalocean:
+    digitalocean: function do-axiom-implode() {
+    digitalocean:     /snap/bin/doctl compute droplet delete -f $(/snap/bin/doctl compute droplet list | awk '{ print $2 }' | grep $(hostname))
+    digitalocean: }
+    digitalocean:
+    digitalocean: # Setting the PATH to include anyenv binary directory
+    digitalocean: export PATH="$HOME/.anyenv/bin:$PATH"
+    digitalocean:
+    digitalocean: # Initialize anyenv
+    digitalocean: eval "$(anyenv init -)"
+    digitalocean:
+    digitalocean: # Initialize pyenv-virtualenv
+    digitalocean: eval "$(pyenv virtualenv-init -)"=== INSTALLING ANYENV ===
+    digitalocean: Manifest directory doesn't exist: /home/op/.config/anyenv/anyenv-install
+    digitalocean: === ANYENV INSTALLED ===
+==> digitalocean: Cloning into '/root/.anyenv/plugins/anyenv-update'...
+==> digitalocean: Cloning into '/root/.anyenv/plugins/anyenv-git'...
+==> digitalocean: /tmp/script_3328.sh: 62: /home/op/.anyenv/envs/pyenv/bin/pyenv: not found
+==> digitalocean: /tmp/script_3328.sh: 64: /home/op/.anyenv/envs/pyenv/bin/pyenv: not found
+    digitalocean: anyenv-install: definition not found: pyenv
+==> digitalocean: Cloning into '/plugins/pyenv-virtualenv'...
+    digitalocean: Reading package lists...
+    digitalocean: Building dependency tree...
+    digitalocean: Reading state information...
+    digitalocean: autoconf is already the newest version (2.69-11.1).
+    digitalocean: libdb-dev is already the newest version (1:5.3.21~exp1ubuntu2).
+    digitalocean: libffi-dev is already the newest version (3.3-4).
+    digitalocean: libgdbm-dev is already the newest version (1.18.1-5).
+    digitalocean: libgdbm6 is already the newest version (1.18.1-5).
+    digitalocean: libreadline-dev is already the newest version (8.0-4).
+    digitalocean: libyaml-dev is already the newest version (0.2.2-1).
+    digitalocean: patch is already the newest version (2.7.6-6).
+    digitalocean: build-essential is already the newest version (12.8ubuntu1.1).
+    digitalocean: libgmp-dev is already the newest version (2:6.2.0+dfsg-4ubuntu0.1).
+    digitalocean: libncurses5-dev is already the newest version (6.2-0ubuntu2.1).
+    digitalocean: libssl-dev is already the newest version (1.1.1f-1ubuntu2.19).
+    digitalocean: uuid-dev is already the newest version (2.34-0.1ubuntu9.4).
+    digitalocean: zlib1g-dev is already the newest version (1:1.2.11.dfsg-2ubuntu1.5).
+    digitalocean: rustc is already the newest version (1.66.1+dfsg0ubuntu1~llvm-0ubuntu0.20.04).
+    digitalocean: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+    digitalocean: anyenv-install: definition not found: rbenv
+==> digitalocean: /tmp/script_3328.sh: 69: /home/op/.anyenv/envs/rbenv/bin/rbenv: not found
+==> digitalocean: /tmp/script_3328.sh: 3: typeset: not found
+    digitalocean: anyenv-install: definition not found: goenv
+==> digitalocean: /tmp/script_3328.sh: 8: anyenv: not found
+==> digitalocean: /tmp/script_3328.sh: 73: /home/op/.anyenv/envs/goenv/bin/goenv: not found
+==> digitalocean: /tmp/script_3328.sh: 3: typeset: not found
+    digitalocean: anyenv-install: definition not found: nodenv
+    digitalocean: Installing Docker
+==> digitalocean: /tmp/script_3328.sh: 8: anyenv: not found
+==> digitalocean: /tmp/script_3328.sh: 77: /home/op/.anyenv/envs/nodenv/bin/nodenv: not found
+    digitalocean: # Executing docker install script, commit: e5543d473431b782227f8908005543bb4389b8de
+==> digitalocean: + sh -c apt-get update -qq >/dev/null
+==> digitalocean: + sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq apt-transport-https ca-certificates curl >/dev/null
+==> digitalocean: + sh -c install -m 0755 -d /etc/apt/keyrings
+==> digitalocean: + sh -c curl -fsSL "https://download.docker.com/linux/ubuntu/gpg" | gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
+==> digitalocean: + sh -c chmod a+r /etc/apt/keyrings/docker.gpg
+==> digitalocean: + sh -c echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu focal stable" > /etc/apt/sources.list.d/docker.list
+==> digitalocean: + sh -c apt-get update -qq >/dev/null
+==> digitalocean: + sh -c DEBIAN_FRONTEND=noninteractive apt-get install -y -qq docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-ce-rootless-extras docker-buildx-plugin >/dev/null
+==> digitalocean: + sh -c docker version
+    digitalocean: Client: Docker Engine - Community
+    digitalocean:  Version:           24.0.6
+    digitalocean:  API version:       1.43
+    digitalocean:  Go version:        go1.20.7
+    digitalocean:  Git commit:        ed223bc
+    digitalocean:  Built:             Mon Sep  4 12:32:12 2023
+    digitalocean:  OS/Arch:           linux/amd64
+    digitalocean:  Context:           default
+    digitalocean:
+    digitalocean: Server: Docker Engine - Community
+    digitalocean:  Engine:
+    digitalocean:   Version:          24.0.6
+    digitalocean:   API version:      1.43 (minimum version 1.12)
+    digitalocean:   Go version:       go1.20.7
+    digitalocean:   Git commit:       1a79695
+    digitalocean:   Built:            Mon Sep  4 12:32:12 2023
+    digitalocean:   OS/Arch:          linux/amd64
+    digitalocean:   Experimental:     false
+    digitalocean:  containerd:
+    digitalocean:   Version:          1.6.24
+    digitalocean:   GitCommit:        61f9fd88f79f081d64d6fa3bb1a0dc71ec870523
+    digitalocean:  runc:
+    digitalocean:   Version:          1.1.9
+    digitalocean:   GitCommit:        v1.1.9-0-gccaecfc
+    digitalocean:  docker-init:
+    digitalocean:   Version:          0.19.0
+    digitalocean:   GitCommit:        de40ad0
+    digitalocean:
+    digitalocean: ================================================================================
+    digitalocean:
+    digitalocean: To run Docker as a non-privileged user, consider setting up the
+    digitalocean: Docker daemon in rootless mode for your user:
+    digitalocean:
+    digitalocean:     dockerd-rootless-setuptool.sh install
+    digitalocean:
+    digitalocean: Visit https://docs.docker.com/go/rootless/ to learn about rootless mode.
+    digitalocean:
+    digitalocean:
+    digitalocean: To run the Docker daemon as a fully privileged service, but granting non-root
+    digitalocean: users access, refer to https://docs.docker.com/go/daemon-access/
+    digitalocean:
+    digitalocean: WARNING: Access to the remote API on a privileged Docker daemon is equivalent
+    digitalocean:          to root access on the host. Refer to the 'Docker daemon attack surface'
+    digitalocean:          documentation for details: https://docs.docker.com/go/attack-surface/
+    digitalocean:
+    digitalocean: ================================================================================
+    digitalocean:
+    digitalocean: Installing Interlace
+==> digitalocean: Cloning into '/home/op/recon/interlace'...
+    digitalocean: running install
+    digitalocean: running bdist_egg
+    digitalocean: running egg_info
+    digitalocean: creating Interlace.egg-info
+    digitalocean: writing Interlace.egg-info/PKG-INFO
+    digitalocean: writing dependency_links to Interlace.egg-info/dependency_links.txt
+    digitalocean: writing entry points to Interlace.egg-info/entry_points.txt
+    digitalocean: writing requirements to Interlace.egg-info/requires.txt
+    digitalocean: writing top-level names to Interlace.egg-info/top_level.txt
+    digitalocean: writing manifest file 'Interlace.egg-info/SOURCES.txt'
+    digitalocean: reading manifest file 'Interlace.egg-info/SOURCES.txt'
+    digitalocean: writing manifest file 'Interlace.egg-info/SOURCES.txt'
+    digitalocean: installing library code to build/bdist.linux-x86_64/egg
+    digitalocean: running install_lib
+    digitalocean: running build_py
+    digitalocean: creating build
+    digitalocean: creating build/lib
+    digitalocean: creating build/lib/Interlace
+    digitalocean: copying Interlace/interlace.py -> build/lib/Interlace
+    digitalocean: copying Interlace/__init__.py -> build/lib/Interlace
+    digitalocean: creating build/lib/Interlace/lib
+    digitalocean: copying Interlace/lib/threader.py -> build/lib/Interlace/lib
+    digitalocean: copying Interlace/lib/__init__.py -> build/lib/Interlace/lib
+    digitalocean: creating build/lib/Interlace/lib/core
+    digitalocean: copying Interlace/lib/core/__version__.py -> build/lib/Interlace/lib/core
+    digitalocean: copying Interlace/lib/core/output.py -> build/lib/Interlace/lib/core
+    digitalocean: copying Interlace/lib/core/__init__.py -> build/lib/Interlace/lib/core
+    digitalocean: copying Interlace/lib/core/input.py -> build/lib/Interlace/lib/core
+    digitalocean: creating build/bdist.linux-x86_64
+    digitalocean: creating build/bdist.linux-x86_64/egg
+    digitalocean: creating build/bdist.linux-x86_64/egg/Interlace
+    digitalocean: copying build/lib/Interlace/interlace.py -> build/bdist.linux-x86_64/egg/Interlace
+    digitalocean: copying build/lib/Interlace/__init__.py -> build/bdist.linux-x86_64/egg/Interlace
+    digitalocean: creating build/bdist.linux-x86_64/egg/Interlace/lib
+    digitalocean: copying build/lib/Interlace/lib/threader.py -> build/bdist.linux-x86_64/egg/Interlace/lib
+    digitalocean: creating build/bdist.linux-x86_64/egg/Interlace/lib/core
+    digitalocean: copying build/lib/Interlace/lib/core/__version__.py -> build/bdist.linux-x86_64/egg/Interlace/lib/core
+    digitalocean: copying build/lib/Interlace/lib/core/output.py -> build/bdist.linux-x86_64/egg/Interlace/lib/core
+    digitalocean: copying build/lib/Interlace/lib/core/__init__.py -> build/bdist.linux-x86_64/egg/Interlace/lib/core
+    digitalocean: copying build/lib/Interlace/lib/core/input.py -> build/bdist.linux-x86_64/egg/Interlace/lib/core
+    digitalocean: copying build/lib/Interlace/lib/__init__.py -> build/bdist.linux-x86_64/egg/Interlace/lib
+    digitalocean: byte-compiling build/bdist.linux-x86_64/egg/Interlace/interlace.py to interlace.cpython-38.pyc
+    digitalocean: byte-compiling build/bdist.linux-x86_64/egg/Interlace/__init__.py to __init__.cpython-38.pyc
+    digitalocean: byte-compiling build/bdist.linux-x86_64/egg/Interlace/lib/threader.py to threader.cpython-38.pyc
+    digitalocean: byte-compiling build/bdist.linux-x86_64/egg/Interlace/lib/core/__version__.py to __version__.cpython-38.pyc
+    digitalocean: byte-compiling build/bdist.linux-x86_64/egg/Interlace/lib/core/output.py to output.cpython-38.pyc
+    digitalocean: byte-compiling build/bdist.linux-x86_64/egg/Interlace/lib/core/__init__.py to __init__.cpython-38.pyc
+    digitalocean: byte-compiling build/bdist.linux-x86_64/egg/Interlace/lib/core/input.py to input.cpython-38.pyc
+    digitalocean: byte-compiling build/bdist.linux-x86_64/egg/Interlace/lib/__init__.py to __init__.cpython-38.pyc
+    digitalocean: creating build/bdist.linux-x86_64/egg/EGG-INFO
+    digitalocean: copying Interlace.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+    digitalocean: copying Interlace.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+==> digitalocean: zip_safe flag not set; analyzing archive contents...
+    digitalocean: copying Interlace.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+    digitalocean: copying Interlace.egg-info/entry_points.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+    digitalocean: copying Interlace.egg-info/requires.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+    digitalocean: copying Interlace.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+    digitalocean: creating dist
+    digitalocean: creating 'dist/Interlace-1.9.8-py3.8.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+    digitalocean: removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+    digitalocean: Processing Interlace-1.9.8-py3.8.egg
+    digitalocean: Copying Interlace-1.9.8-py3.8.egg to /usr/local/lib/python3.8/dist-packages
+    digitalocean: Adding Interlace 1.9.8 to easy-install.pth file
+    digitalocean: Installing interlace script to /usr/local/bin
+    digitalocean:
+    digitalocean: Installed /usr/local/lib/python3.8/dist-packages/Interlace-1.9.8-py3.8.egg
+    digitalocean: Processing dependencies for Interlace==1.9.8
+    digitalocean: Searching for tqdm==4.62.3
+    digitalocean: Reading https://pypi.org/simple/tqdm/
+    digitalocean: Downloading https://files.pythonhosted.org/packages/63/f3/b7a1b8e40fd1bd049a34566eb353527bb9b8e9b98f8b6cf803bb64d8ce95/tqdm-4.62.3-py2.py3-none-any.whl#sha256=8dd278a422499cd6b727e6ae4061c40b48fce8b76d1ccbf5d34fca9b7f925b0c
+    digitalocean: Best match: tqdm 4.62.3
+    digitalocean: Processing tqdm-4.62.3-py2.py3-none-any.whl
+    digitalocean: Installing tqdm-4.62.3-py2.py3-none-any.whl to /usr/local/lib/python3.8/dist-packages
+    digitalocean: Adding tqdm 4.62.3 to easy-install.pth file
+    digitalocean: Installing tqdm script to /usr/local/bin
+    digitalocean:
+    digitalocean: Installed /usr/local/lib/python3.8/dist-packages/tqdm-4.62.3-py3.8.egg
+    digitalocean: Searching for netaddr==0.7.20
+    digitalocean: Reading https://pypi.org/simple/netaddr/
+    digitalocean: Downloading https://files.pythonhosted.org/packages/f4/7a/d514cd5ab61bfc9d09d0c2bd52a2336134515cc3c9949b9054dfc1c2f7ac/netaddr-0.7.20-py2.py3-none-any.whl#sha256=7a9c8f58d048b820df1882439bb04fb2de13c03ec8af3112a1099822b0a2a4b8
+    digitalocean: Best match: netaddr 0.7.20
+    digitalocean: Processing netaddr-0.7.20-py2.py3-none-any.whl
+    digitalocean: Installing netaddr-0.7.20-py2.py3-none-any.whl to /usr/local/lib/python3.8/dist-packages
+    digitalocean: Adding netaddr 0.7.20 to easy-install.pth file
+    digitalocean: Installing netaddr script to /usr/local/bin
+    digitalocean:
+    digitalocean: Installed /usr/local/lib/python3.8/dist-packages/netaddr-0.7.20-py3.8.egg
+    digitalocean: Finished processing dependencies for Interlace==1.9.8
+    digitalocean: Optimizing SSH Connections
+    digitalocean: ClientAliveInterval 60
+    digitalocean: ClientAliveCountMax 60
+    digitalocean: MaxSessions 100
+    digitalocean: net.ipv4.netfilter.ip_conntrack_max = 1048576
+    digitalocean: net.nf_conntrack_max = 1048576
+    digitalocean: net.core.somaxconn = 1048576
+    digitalocean: net.ipv4.ip_local_port_range = 1024 65535
+    digitalocean: 1024 65535
+    digitalocean: Installing nmap
+    digitalocean: Reading package lists...
+    digitalocean: Building dependency tree...
+    digitalocean: Reading state information...
+    digitalocean: bison is already the newest version (2:3.5.1+dfsg-1).
+    digitalocean: flex is already the newest version (2.6.4-6.2).
+    digitalocean: build-essential is already the newest version (12.8ubuntu1.1).
+    digitalocean: libssl-dev is already the newest version (1.1.1f-1ubuntu2.19).
+    digitalocean: 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+==> digitalocean: --2023-09-20 00:39:06--  https://nmap.org/dist/nmap-7.92.tgz
+==> digitalocean: Resolving nmap.org (nmap.org)... 45.33.49.119, 2600:3c01:e000:3e6::6d4e:7061
+==> digitalocean: Connecting to nmap.org (nmap.org)|45.33.49.119|:443... connected.
+==> digitalocean: HTTP request sent, awaiting response... 200 OK
+==> digitalocean: Length: 12985468 (12M) [application/x-tar]
+==> digitalocean: Saving to: ‘/home/op/recon/nmap.tar.gz’
+==> digitalocean:
+==> digitalocean:      0K .......... .......... .......... .......... ..........  0%  376K 34s
+==> digitalocean:     50K .......... .......... .......... .......... ..........  0%  755K 25s
+==> digitalocean:    100K .......... .......... .......... .......... ..........  1% 61.6M 17s
+==> digitalocean:    150K .......... .......... .......... .......... ..........  1%  762K 17s
+==> digitalocean:    200K .......... .......... .......... .......... ..........  1% 99.1M 13s
+==> digitalocean:    250K .......... .......... .......... .......... ..........  2% 68.7M 11s
+==> digitalocean:    300K .......... .......... .......... .......... ..........  2%  177M 9s
+==> digitalocean:    350K .......... .......... .......... .......... ..........  3%  776K 10s
+==> digitalocean:    400K .......... .......... .......... .......... ..........  3% 98.0M 9s
+==> digitalocean:    450K .......... .......... .......... .......... ..........  3% 76.7M 8s
+==> digitalocean:    500K .......... .......... .......... .......... ..........  4%  179M 7s
+==> digitalocean:    550K .......... .......... .......... .......... ..........  4%  136M 7s
+==> digitalocean:    600K .......... .......... .......... .......... ..........  5%  144M 6s
+==> digitalocean:    650K .......... .......... .......... .......... ..........  5%  160M 6s
+==> digitalocean:    700K .......... .......... .......... .......... ..........  5%  789K 6s
+==> digitalocean:    750K .......... .......... .......... .......... ..........  6% 56.7M 6s
+==> digitalocean:    800K .......... .......... .......... .......... ..........  6% 86.3M 6s
+==> digitalocean:    850K .......... .......... .......... .......... ..........  7%  167M 5s
+==> digitalocean:    900K .......... .......... .......... .......... ..........  7% 92.2M 5s
+==> digitalocean:    950K .......... .......... .......... .......... ..........  7%  153M 5s
+==> digitalocean:   1000K .......... .......... .......... .......... ..........  8%  144M 4s
+==> digitalocean:   1050K .......... .......... .......... .......... ..........  8%  191M 4s
+==> digitalocean:   1100K .......... .......... .......... .......... ..........  9%  182M 4s
+==> digitalocean:   1150K .......... .......... .......... .......... ..........  9%  154M 4s
+==> digitalocean:   1200K .......... .......... .......... .......... ..........  9%  111M 4s
+==> digitalocean:   1250K .......... .......... .......... .......... .......... 10%  186M 4s
+==> digitalocean:   1300K .......... .......... .......... .......... .......... 10%  183M 3s
+==> digitalocean:   1350K .......... .......... .......... .......... .......... 11%  160M 3s
+==> digitalocean:   1400K .......... .......... .......... .......... .......... 11%  821K 4s
+==> digitalocean:   1450K .......... .......... .......... .......... .......... 11% 63.6M 3s
+==> digitalocean:   1500K .......... .......... .......... .......... .......... 12% 28.3M 3s
+==> digitalocean:   1550K .......... .......... .......... .......... .......... 12%  146M 3s
+==> digitalocean:   1600K .......... .......... .......... .......... .......... 13%  104M 3s
+==> digitalocean:   1650K .......... .......... .......... .......... .......... 13%  159M 3s
+==> digitalocean:   1700K .......... .......... .......... .......... .......... 13%  157M 3s
+==> digitalocean:   1750K .......... .......... .......... .......... .......... 14%  169M 3s
+==> digitalocean:   1800K .......... .......... .......... .......... .......... 14%  122M 3s
+==> digitalocean:   1850K .......... .......... .......... .......... .......... 14%  123M 3s
+==> digitalocean:   1900K .......... .......... .......... .......... .......... 15%  132M 3s
+==> digitalocean:   1950K .......... .......... .......... .......... .......... 15%  118M 3s
+==> digitalocean:   2000K .......... .......... .......... .......... .......... 16%  106M 2s
+==> digitalocean:   2050K .......... .......... .......... .......... .......... 16%  146M 2s
+==> digitalocean:   2100K .......... .......... .......... .......... .......... 16%  125M 2s
+==> digitalocean:   2150K .......... .......... .......... .......... .......... 17%  127M 2s
+==> digitalocean:   2200K .......... .......... .......... .......... .......... 17%  153M 2s
+==> digitalocean:   2250K .......... .......... .......... .......... .......... 18%  119M 2s
+==> digitalocean:   2300K .......... .......... .......... .......... .......... 18% 89.5M 2s
+==> digitalocean:   2350K .......... .......... .......... .......... .......... 18%  104M 2s
+==> digitalocean:   2400K .......... .......... .......... .......... .......... 19% 93.8M 2s
+==> digitalocean:   2450K .......... .......... .......... .......... .......... 19%  124M 2s
+==> digitalocean:   2500K .......... .......... .......... .......... .......... 20%  120M 2s
+==> digitalocean:   2550K .......... .......... .......... .......... .......... 20%  151M 2s
+==> digitalocean:   2600K .......... .......... .......... .......... .......... 20%  106M 2s
+==> digitalocean:   2650K .......... .......... .......... .......... .......... 21%  107M 2s
+==> digitalocean:   2700K .......... .......... .......... .......... .......... 21%  117M 2s
+==> digitalocean:   2750K .......... .......... .......... .......... .......... 22%  122M 2s
+==> digitalocean:   2800K .......... .......... .......... .......... .......... 22% 96.8M 2s
+==> digitalocean:   2850K .......... .......... .......... .......... .......... 22%  942K 2s
+==> digitalocean:   2900K .......... .......... .......... .......... .......... 23%  189M 2s
+==> digitalocean:   2950K .......... .......... .......... .......... .......... 23%  286M 2s
+==> digitalocean:   3000K .......... .......... .......... .......... .......... 24%  123M 2s
+==> digitalocean:   3050K .......... .......... .......... .......... .......... 24%  116M 2s
+==> digitalocean:   3100K .......... .......... .......... .......... .......... 24% 61.6M 2s
+==> digitalocean:   3150K .......... .......... .......... .......... .......... 25%  145M 2s
+==> digitalocean:   3200K .......... .......... .......... .......... .......... 25%  120M 2s
+==> digitalocean:   3250K .......... .......... .......... .......... .......... 26% 41.4M 2s
+==> digitalocean:   3300K .......... .......... .......... .......... .......... 26%  209M 1s
+==> digitalocean:   3350K .......... .......... .......... .......... .......... 26%  201M 1s
+==> digitalocean:   3400K .......... .......... .......... .......... .......... 27%  149M 1s
+==> digitalocean:   3450K .......... .......... .......... .......... .......... 27%  155M 1s
+==> digitalocean:   3500K .......... .......... .......... .......... .......... 27%  242M 1s
+==> digitalocean:   3550K .......... .......... .......... .......... .......... 28%  204M 1s
+==> digitalocean:   3600K .......... .......... .......... .......... .......... 28%  165M 1s
+==> digitalocean:   3650K .......... .......... .......... .......... .......... 29%  181M 1s
+==> digitalocean:   3700K .......... .......... .......... .......... .......... 29%  150M 1s
+==> digitalocean:   3750K .......... .......... .......... .......... .......... 29%  181M 1s
+==> digitalocean:   3800K .......... .......... .......... .......... .......... 30%  193M 1s
+==> digitalocean:   3850K .......... .......... .......... .......... .......... 30%  120M 1s
+==> digitalocean:   3900K .......... .......... .......... .......... .......... 31%  241M 1s
+==> digitalocean:   3950K .......... .......... .......... .......... .......... 31%  243M 1s
+==> digitalocean:   4000K .......... .......... .......... .......... .......... 31%  188M 1s
+==> digitalocean:   4050K .......... .......... .......... .......... .......... 32%  265M 1s
+==> digitalocean:   4100K .......... .......... .......... .......... .......... 32%  239M 1s
+==> digitalocean:   4150K .......... .......... .......... .......... .......... 33%  250M 1s
+==> digitalocean:   4200K .......... .......... .......... .......... .......... 33%  216M 1s
+==> digitalocean:   4250K .......... .......... .......... .......... .......... 33%  179M 1s
+==> digitalocean:   4300K .......... .......... .......... .......... .......... 34%  154M 1s
+==> digitalocean:   4350K .......... .......... .......... .......... .......... 34%  171M 1s
+==> digitalocean:   4400K .......... .......... .......... .......... .......... 35%  139M 1s
+==> digitalocean:   4450K .......... .......... .......... .......... .......... 35%  147M 1s
+==> digitalocean:   4500K .......... .......... .......... .......... .......... 35%  129M 1s
+==> digitalocean:   4550K .......... .......... .......... .......... .......... 36%  207M 1s
+==> digitalocean:   4600K .......... .......... .......... .......... .......... 36%  123M 1s
+==> digitalocean:   4650K .......... .......... .......... .......... .......... 37%  220M 1s
+==> digitalocean:   4700K .......... .......... .......... .......... .......... 37%  224M 1s
+==> digitalocean:   4750K .......... .......... .......... .......... .......... 37%  210M 1s
+==> digitalocean:   4800K .......... .......... .......... .......... .......... 38%  144M 1s
+==> digitalocean:   4850K .......... .......... .......... .......... .......... 38%  134M 1s
+==> digitalocean:   4900K .......... .......... .......... .......... .......... 39%  187M 1s
+==> digitalocean:   4950K .......... .......... .......... .......... .......... 39%  165M 1s
+==> digitalocean:   5000K .......... .......... .......... .......... .......... 39%  141M 1s
+==> digitalocean:   5050K .......... .......... .......... .......... .......... 40%  214M 1s
+==> digitalocean:   5100K .......... .......... .......... .......... .......... 40%  221M 1s
+==> digitalocean:   5150K .......... .......... .......... .......... .......... 41%  953K 1s
+==> digitalocean:   5200K .......... .......... .......... .......... .......... 41% 83.4M 1s
+==> digitalocean:   5250K .......... .......... .......... .......... .......... 41% 77.5M 1s
+==> digitalocean:   5300K .......... .......... .......... .......... .......... 42% 82.0M 1s
+==> digitalocean:   5350K .......... .......... .......... .......... .......... 42%  138M 1s
+==> digitalocean:   5400K .......... .......... .......... .......... .......... 42%  122M 1s
+==> digitalocean:   5450K .......... .......... .......... .......... .......... 43%  163M 1s
+==> digitalocean:   5500K .......... .......... .......... .......... .......... 43%  166M 1s
+==> digitalocean:   5550K .......... .......... .......... .......... .......... 44%  122M 1s
+==> digitalocean:   5600K .......... .......... .......... .......... .......... 44%  120M 1s
+==> digitalocean:   5650K .......... .......... .......... .......... .......... 44%  223M 1s
+==> digitalocean:   5700K .......... .......... .......... .......... .......... 45%  273M 1s
+==> digitalocean:   5750K .......... .......... .......... .......... .......... 45%  245M 1s
+==> digitalocean:   5800K .......... .......... .......... .......... .......... 46%  180M 1s
+==> digitalocean:   5850K .......... .......... .......... .......... .......... 46%  239M 1s
+==> digitalocean:   5900K .......... .......... .......... .......... .......... 46%  204M 1s
+==> digitalocean:   5950K .......... .......... .......... .......... .......... 47%  264M 1s
+==> digitalocean:   6000K .......... .......... .......... .......... .......... 47%  265M 1s
+==> digitalocean:   6050K .......... .......... .......... .......... .......... 48%  303M 1s
+==> digitalocean:   6100K .......... .......... .......... .......... .......... 48%  310M 1s
+==> digitalocean:   6150K .......... .......... .......... .......... .......... 48%  246M 1s
+==> digitalocean:   6200K .......... .......... .......... .......... .......... 49%  282M 1s
+==> digitalocean:   6250K .......... .......... .......... .......... .......... 49%  214M 1s
+==> digitalocean:   6300K .......... .......... .......... .......... .......... 50%  236M 1s
+==> digitalocean:   6350K .......... .......... .......... .......... .......... 50%  215M 1s
+==> digitalocean:   6400K .......... .......... .......... .......... .......... 50%  207M 1s
+==> digitalocean:   6450K .......... .......... .......... .......... .......... 51%  194M 1s
+==> digitalocean:   6500K .......... .......... .......... .......... .......... 51%  203M 1s
+==> digitalocean:   6550K .......... .......... .......... .......... .......... 52%  297M 1s
+==> digitalocean:   6600K .......... .......... .......... .......... .......... 52%  215M 1s
+==> digitalocean:   6650K .......... .......... .......... .......... .......... 52%  238M 1s
+==> digitalocean:   6700K .......... .......... .......... .......... .......... 53%  317M 1s
+==> digitalocean:   6750K .......... .......... .......... .......... .......... 53%  264M 1s
+==> digitalocean:   6800K .......... .......... .......... .......... .......... 54% 94.4M 1s
+==> digitalocean:   6850K .......... .......... .......... .......... .......... 54%  133M 1s
+==> digitalocean:   6900K .......... .......... .......... .......... .......... 54%  146M 0s
+==> digitalocean:   6950K .......... .......... .......... .......... .......... 55%  198M 0s
+==> digitalocean:   7000K .......... .......... .......... .......... .......... 55%  168M 0s
+==> digitalocean:   7050K .......... .......... .......... .......... .......... 55%  197M 0s
+==> digitalocean:   7100K .......... .......... .......... .......... .......... 56%  912K 1s
+==> digitalocean:   7150K .......... .......... .......... .......... .......... 56%  155M 1s
+==> digitalocean:   7200K .......... .......... .......... .......... .......... 57%  139M 0s
+==> digitalocean:   7250K .......... .......... .......... .......... .......... 57%  133M 0s
+==> digitalocean:   7300K .......... .......... .......... .......... .......... 57%  123M 0s
+==> digitalocean:   7350K .......... .......... .......... .......... .......... 58%  130M 0s
+==> digitalocean:   7400K .......... .......... .......... .......... .......... 58% 98.3M 0s
+==> digitalocean:   7450K .......... .......... .......... .......... .......... 59%  253M 0s
+==> digitalocean:   7500K .......... .......... .......... .......... .......... 59%  259M 0s
+==> digitalocean:   7550K .......... .......... .......... .......... .......... 59%  124M 0s
+==> digitalocean:   7600K .......... .......... .......... .......... .......... 60%  226M 0s
+==> digitalocean:   7650K .......... .......... .......... .......... .......... 60%  166M 0s
+==> digitalocean:   7700K .......... .......... .......... .......... .......... 61%  127M 0s
+==> digitalocean:   7750K .......... .......... .......... .......... .......... 61%  134M 0s
+==> digitalocean:   7800K .......... .......... .......... .......... .......... 61%  181M 0s
+==> digitalocean:   7850K .......... .......... .......... .......... .......... 62%  225M 0s
+==> digitalocean:   7900K .......... .......... .......... .......... .......... 62%  218M 0s
+==> digitalocean:   7950K .......... .......... .......... .......... .......... 63%  218M 0s
+==> digitalocean:   8000K .......... .......... .......... .......... .......... 63%  234M 0s
+==> digitalocean:   8050K .......... .......... .......... .......... .......... 63%  267M 0s
+==> digitalocean:   8100K .......... .......... .......... .......... .......... 64%  268M 0s
+==> digitalocean:   8150K .......... .......... .......... .......... .......... 64%  215M 0s
+==> digitalocean:   8200K .......... .......... .......... .......... .......... 65%  167M 0s
+==> digitalocean:   8250K .......... .......... .......... .......... .......... 65%  257M 0s
+==> digitalocean:   8300K .......... .......... .......... .......... .......... 65%  272M 0s
+==> digitalocean:   8350K .......... .......... .......... .......... .......... 66%  265M 0s
+==> digitalocean:   8400K .......... .......... .......... .......... .......... 66%  230M 0s
+==> digitalocean:   8450K .......... .......... .......... .......... .......... 67%  270M 0s
+==> digitalocean:   8500K .......... .......... .......... .......... .......... 67%  263M 0s
+==> digitalocean:   8550K .......... .......... .......... .......... .......... 67%  264M 0s
+==> digitalocean:   8600K .......... .......... .......... .......... .......... 68%  182M 0s
+==> digitalocean:   8650K .......... .......... .......... .......... .......... 68%  226M 0s
+==> digitalocean:   8700K .......... .......... .......... .......... .......... 69%  250M 0s
+==> digitalocean:   8750K .......... .......... .......... .......... .......... 69%  243M 0s
+==> digitalocean:   8800K .......... .......... .......... .......... .......... 69%  154M 0s
+==> digitalocean:   8850K .......... .......... .......... .......... .......... 70%  155M 0s
+==> digitalocean:   8900K .......... .......... .......... .......... .......... 70%  249M 0s
+==> digitalocean:   8950K .......... .......... .......... .......... .......... 70%  219M 0s
+==> digitalocean:   9000K .......... .......... .......... .......... .......... 71%  205M 0s
+==> digitalocean:   9050K .......... .......... .......... .......... .......... 71%  203M 0s
+==> digitalocean:   9100K .......... .......... .......... .......... .......... 72%  233M 0s
+==> digitalocean:   9150K .......... .......... .......... .......... .......... 72%  189M 0s
+==> digitalocean:   9200K .......... .......... .......... .......... .......... 72%  196M 0s
+==> digitalocean:   9250K .......... .......... .......... .......... .......... 73%  901K 0s
+==> digitalocean:   9300K .......... .......... .......... .......... .......... 73% 97.2M 0s
+==> digitalocean:   9350K .......... .......... .......... .......... .......... 74%  134M 0s
+==> digitalocean:   9400K .......... .......... .......... .......... .......... 74%  143M 0s
+==> digitalocean:   9450K .......... .......... .......... .......... .......... 74%  101M 0s
+==> digitalocean:   9500K .......... .......... .......... .......... .......... 75%  140M 0s
+==> digitalocean:   9550K .......... .......... .......... .......... .......... 75%  124M 0s
+==> digitalocean:   9600K .......... .......... .......... .......... .......... 76%  168M 0s
+==> digitalocean:   9650K .......... .......... .......... .......... .......... 76%  220M 0s
+==> digitalocean:   9700K .......... .......... .......... .......... .......... 76%  282M 0s
+==> digitalocean:   9750K .......... .......... .......... .......... .......... 77%  258M 0s
+==> digitalocean:   9800K .......... .......... .......... .......... .......... 77%  180M 0s
+==> digitalocean:   9850K .......... .......... .......... .......... .......... 78%  142M 0s
+==> digitalocean:   9900K .......... .......... .......... .......... .......... 78%  240M 0s
+==> digitalocean:   9950K .......... .......... .......... .......... .......... 78%  228M 0s
+==> digitalocean:  10000K .......... .......... .......... .......... .......... 79%  192M 0s
+==> digitalocean:  10050K .......... .......... .......... .......... .......... 79%  277M 0s
+==> digitalocean:  10100K .......... .......... .......... .......... .......... 80%  269M 0s
+==> digitalocean:  10150K .......... .......... .......... .......... .......... 80%  246M 0s
+==> digitalocean:  10200K .......... .......... .......... .......... .......... 80%  234M 0s
+==> digitalocean:  10250K .......... .......... .......... .......... .......... 81%  249M 0s
+==> digitalocean:  10300K .......... .......... .......... .......... .......... 81%  204M 0s
+==> digitalocean:  10350K .......... .......... .......... .......... .......... 82%  221M 0s
+==> digitalocean:  10400K .......... .......... .......... .......... .......... 82%  175M 0s
+==> digitalocean:  10450K .......... .......... .......... .......... .......... 82%  196M 0s
+==> digitalocean:  10500K .......... .......... .......... .......... .......... 83%  186M 0s
+==> digitalocean:  10550K .......... .......... .......... .......... .......... 83%  133M 0s
+==> digitalocean:  10600K .......... .......... .......... .......... .......... 83%  167M 0s
+==> digitalocean:  10650K .......... .......... .......... .......... .......... 84%  194M 0s
+==> digitalocean:  10700K .......... .......... .......... .......... .......... 84%  203M 0s
+==> digitalocean:  10750K .......... .......... .......... .......... .......... 85%  163M 0s
+==> digitalocean:  10800K .......... .......... .......... .......... .......... 85%  154M 0s
+==> digitalocean:  10850K .......... .......... .......... .......... .......... 85%  223M 0s
+==> digitalocean:  10900K .......... .......... .......... .......... .......... 86%  236M 0s
+==> digitalocean:  10950K .......... .......... .......... .......... .......... 86%  178M 0s
+==> digitalocean:  11000K .......... .......... .......... .......... .......... 87%  168M 0s
+==> digitalocean:  11050K .......... .......... .......... .......... .......... 87%  247M 0s
+==> digitalocean:  11100K .......... .......... .......... .......... .......... 87%  216M 0s
+==> digitalocean:  11150K .......... .......... .......... .......... .......... 88%  259M 0s
+==> digitalocean:  11200K .......... .......... .......... .......... .......... 88%  231M 0s
+==> digitalocean:  11250K .......... .......... .......... .......... .......... 89%  227M 0s
+==> digitalocean:  11300K .......... .......... .......... .......... .......... 89%  162M 0s
+==> digitalocean:  11350K .......... .......... .......... .......... .......... 89%  197M 0s
+==> digitalocean:  11400K .......... .......... .......... .......... .......... 90%  151M 0s
+==> digitalocean:  11450K .......... .......... .......... .......... .......... 90%  202M 0s
+==> digitalocean:  11500K .......... .......... .......... .......... .......... 91%  922K 0s
+==> digitalocean:  11550K .......... .......... .......... .......... .......... 91%  143M 0s
+==> digitalocean:  11600K .......... .......... .......... .......... .......... 91%  150M 0s
+==> digitalocean:  11650K .......... .......... .......... .......... .......... 92%  120M 0s
+==> digitalocean:  11700K .......... .......... .......... .......... .......... 92%  136M 0s
+==> digitalocean:  11750K .......... .......... .......... .......... .......... 93%  202M 0s
+==> digitalocean:  11800K .......... .......... .......... .......... .......... 93%  141M 0s
+==> digitalocean:  11850K .......... .......... .......... .......... .......... 93%  176M 0s
+==> digitalocean:  11900K .......... .......... .......... .......... .......... 94%  211M 0s
+==> digitalocean:  11950K .......... .......... .......... .......... .......... 94%  224M 0s
+==> digitalocean:  12000K .......... .......... .......... .......... .......... 95%  171M 0s
+==> digitalocean:  12050K .......... .......... .......... .......... .......... 95%  157M 0s
+==> digitalocean:  12100K .......... .......... .......... .......... .......... 95%  183M 0s
+==> digitalocean:  12150K .......... .......... .......... .......... .......... 96%  186M 0s
+==> digitalocean:  12200K .......... .......... .......... .......... .......... 96%  179M 0s
+==> digitalocean:  12250K .......... .......... .......... .......... .......... 96%  182M 0s
+==> digitalocean:  12300K .......... .......... .......... .......... .......... 97%  229M 0s
+==> digitalocean:  12350K .......... .......... .......... .......... .......... 97%  127M 0s
+==> digitalocean:  12400K .......... .......... .......... .......... .......... 98%  101M 0s
+==> digitalocean:  12450K .......... .......... .......... .......... .......... 98%  170M 0s
+==> digitalocean:  12500K .......... .......... .......... .......... .......... 98%  121M 0s
+==> digitalocean:  12550K .......... .......... .......... .......... .......... 99%  201M 0s
+==> digitalocean:  12600K .......... .......... .......... .......... .......... 99%  184M 0s
+==> digitalocean:  12650K .......... .......... .......... .                    100%  151M=0.8s
+==> digitalocean:
+==> digitalocean: 2023-09-20 00:39:07 (15.5 MB/s) - ‘/home/op/recon/nmap.tar.gz’ saved [12985468/12985468]
+==> digitalocean:
+    digitalocean: checking whether NLS is requested... yes
+    digitalocean: checking build system type... x86_64-unknown-linux-gnu
+    digitalocean: checking host system type... x86_64-unknown-linux-gnu
+    digitalocean: checking for gcc... gcc
+    digitalocean: checking whether the C compiler works... yes
+    digitalocean: checking for C compiler default output file name... a.out
+    digitalocean: checking for suffix of executables...
+    digitalocean: checking whether we are cross compiling... no
+    digitalocean: checking for suffix of object files... o
+    digitalocean: checking whether we are using the GNU C compiler... yes
+    digitalocean: checking whether gcc accepts -g... yes
+    digitalocean: checking for gcc option to accept ISO C89... none needed
+    digitalocean: checking for inline... inline
+    digitalocean: checking for gcc... (cached) gcc
+    digitalocean: checking whether we are using the GNU C compiler... (cached) yes
+    digitalocean: checking whether gcc accepts -g... (cached) yes
+    digitalocean: checking for gcc option to accept ISO C89... (cached) none needed
+    digitalocean: checking for g++... g++
+    digitalocean: checking whether we are using the GNU C++ compiler... yes
+    digitalocean: checking whether g++ accepts -g... yes
+    digitalocean: checking for ranlib... ranlib
+    digitalocean: checking for a BSD-compatible install... /usr/bin/install -c
+    digitalocean: checking for gawk... gawk
+    digitalocean: checking for __func__... yes
+    digitalocean: checking for strip... /usr/bin/strip
+    digitalocean: checking how to run the C preprocessor... gcc -E
+    digitalocean: checking for grep that handles long lines and -e... /usr/bin/grep
+    digitalocean: checking for egrep... /usr/bin/grep -E
+    digitalocean: checking for ANSI C header files... yes
+    digitalocean: checking for sys/types.h... yes
+    digitalocean: checking for sys/stat.h... yes
+    digitalocean: checking for stdlib.h... yes
+    digitalocean: checking for string.h... yes
+    digitalocean: checking for memory.h... yes
+    digitalocean: checking for strings.h... yes
+    digitalocean: checking for inttypes.h... yes
+    digitalocean: checking for stdint.h... yes
+    digitalocean: checking for unistd.h... yes
+    digitalocean: checking pwd.h usability... yes
+    digitalocean: checking pwd.h presence... yes
+    digitalocean: checking for pwd.h... yes
+    digitalocean: checking termios.h usability... yes
+    digitalocean: checking termios.h presence... yes
+    digitalocean: checking for termios.h... yes
+    digitalocean: checking sys/sockio.h usability... no
+    digitalocean: checking sys/sockio.h presence... no
+    digitalocean: checking for sys/sockio.h... no
+    digitalocean: checking for stdint.h... (cached) yes
+    digitalocean: checking for sys/stat.h... (cached) yes
+    digitalocean: checking fcntl.h usability... yes
+    digitalocean: checking fcntl.h presence... yes
+    digitalocean: checking for fcntl.h... yes
+    digitalocean: checking for linux/rtnetlink.h... yes
+    digitalocean: checking sys/socket.h usability... yes
+    digitalocean: checking sys/socket.h presence... yes
+    digitalocean: checking for sys/socket.h... yes
+    digitalocean: checking for net/if.h... yes
+    digitalocean: checking for library containing setsockopt... none required
+    digitalocean: checking for library containing gethostbyname... none required
+    digitalocean: checking if AF_INET6 IPPROTO_RAW sockets include the packet header... yes
+    digitalocean: checking for a Python interpreter with version >= 2.4... none
+    digitalocean: checking openssl/ssl.h usability... yes
+    digitalocean: checking openssl/ssl.h presence... yes
+    digitalocean: checking for openssl/ssl.h... yes
+    digitalocean: checking for BIO_int_ctrl in -lcrypto... yes
+    digitalocean: checking for SSL_new in -lssl... yes
+    digitalocean: checking for EVP_PKEY_get1_EC_KEY in -lcrypto... yes
+    digitalocean: checking pcre.h usability... no
+    digitalocean: checking pcre.h presence... no
+    digitalocean: checking for pcre.h... no
+    digitalocean: checking pcre/pcre.h usability... no
+    digitalocean: checking pcre/pcre.h presence... no
+    digitalocean: checking for pcre/pcre.h... no
+    digitalocean: checking zlib.h usability... yes
+    digitalocean: checking zlib.h presence... yes
+    digitalocean: checking for zlib.h... yes
+    digitalocean: checking for gzread in -lz... yes
+    digitalocean: checking libssh2.h usability... no
+    digitalocean: checking libssh2.h presence... no
+    digitalocean: checking for libssh2.h... no
+    digitalocean: checking for library containing dlopen... -ldl
+    digitalocean: checking lua5.3/lua.h usability... no
+    digitalocean: checking lua5.3/lua.h presence... no
+    digitalocean: checking for lua5.3/lua.h... no
+    digitalocean: checking lua/5.3/lua.h usability... no
+    digitalocean: checking lua/5.3/lua.h presence... no
+    digitalocean: checking for lua/5.3/lua.h... no
+    digitalocean: checking lua.h usability... no
+    digitalocean: checking lua.h presence... no
+    digitalocean: checking for lua.h... no
+    digitalocean: checking lua/lua.h usability... no
+    digitalocean: checking lua/lua.h presence... no
+    digitalocean: checking for lua/lua.h... no
+    digitalocean: checking for library containing lua_isyieldable... no
+    digitalocean: checking for lua version == 503... no
+    digitalocean: checking linear.h usability... no
+    digitalocean: checking linear.h presence... no
+    digitalocean: checking for linear.h... no
+    digitalocean: no
+    digitalocean: checking whether byte ordering is bigendian... no
+    digitalocean: checking if struct in_addr is a wacky huge structure (some Sun boxes)... no
+    digitalocean: checking if struct icmp exists... yes
+    digitalocean: checking if struct ip exists... yes
+    digitalocean: checking if struct ip has ip_sum member... yes
+    digitalocean: checking for strerror... yes
+    digitalocean: checking for type of 6th argument to recvfrom()... socklen_t
+    digitalocean: configure: creating ./config.status
+    digitalocean: config.status: creating Makefile
+    digitalocean: config.status: creating libnetutil/Makefile
+    digitalocean: config.status: creating nmap_config.h
+    digitalocean: === configuring in libpcap (/home/op/recon/nmap/libpcap)
+    digitalocean: configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--without-ndiff' '--without-zenmap' '--without-nping' '--without-ncat' '--without-nmap-update' '--with-libpcap=included' --cache-file=/dev/null --srcdir=.
+    digitalocean: checking build system type... x86_64-pc-linux-gnu
+    digitalocean: checking host system type... x86_64-pc-linux-gnu
+    digitalocean: checking target system type... x86_64-pc-linux-gnu
+    digitalocean: checking for gcc... gcc
+    digitalocean: checking whether the C compiler works... yes
+    digitalocean: checking for C compiler default output file name... a.out
+    digitalocean: checking for suffix of executables...
+    digitalocean: checking whether we are cross compiling... no
+    digitalocean: checking for suffix of object files... o
+    digitalocean: checking whether we are using the GNU C compiler... yes
+    digitalocean: checking whether gcc accepts -g... yes
+    digitalocean: checking for gcc option to accept ISO C89... none needed
+    digitalocean: checking for gcc option to accept ISO C99... none needed
+    digitalocean: checking whether the compiler supports the -fvisibility=hidden option... yes
+    digitalocean: checking for inline... inline
+    digitalocean: checking for special C compiler options needed for large files... no
+    digitalocean: checking for _FILE_OFFSET_BITS value needed for large files... no
+    digitalocean: checking for _LARGEFILE_SOURCE value needed for large files... no
+    digitalocean: checking how to run the C preprocessor... gcc -E
+    digitalocean: checking for grep that handles long lines and -e... /usr/bin/grep
+    digitalocean: checking for egrep... /usr/bin/grep -E
+    digitalocean: checking for ANSI C header files... yes
+    digitalocean: checking for sys/types.h... yes
+    digitalocean: checking for sys/stat.h... yes
+    digitalocean: checking for stdlib.h... yes
+    digitalocean: checking for string.h... yes
+    digitalocean: checking for memory.h... yes
+    digitalocean: checking for strings.h... yes
+    digitalocean: checking for inttypes.h... yes
+    digitalocean: checking for stdint.h... yes
+    digitalocean: checking for unistd.h... yes
+    digitalocean: checking sys/ioccom.h usability... no
+    digitalocean: checking sys/ioccom.h presence... no
+    digitalocean: checking for sys/ioccom.h... no
+    digitalocean: checking sys/sockio.h usability... no
+    digitalocean: checking sys/sockio.h presence... no
+    digitalocean: checking for sys/sockio.h... no
+    digitalocean: checking limits.h usability... yes
+    digitalocean: checking limits.h presence... yes
+    digitalocean: checking for limits.h... yes
+    digitalocean: checking netpacket/packet.h usability... yes
+    digitalocean: checking netpacket/packet.h presence... yes
+    digitalocean: checking for netpacket/packet.h... yes
+    digitalocean: checking for net/pfvar.h... no
+    digitalocean: checking for linux/sockios.h... yes
+    digitalocean: checking for linux/if_bonding.h... yes
+    digitalocean: checking for ANSI ioctl definitions... yes
+    digitalocean: checking for strerror... yes
+    digitalocean: checking for strerror_r... yes
+    digitalocean: checking whether strerror_r is GNU-style... yes
+    digitalocean: checking for vsyslog... yes
+    digitalocean: checking for vsnprintf... yes
+    digitalocean: checking for snprintf... yes
+    digitalocean: checking for vasprintf... yes
+    digitalocean: checking for asprintf... yes
+    digitalocean: checking for strlcat... no
+    digitalocean: checking for strlcpy... no
+    digitalocean: checking for strtok_r... yes
+    digitalocean: checking for ffs... yes
+    digitalocean: checking whether ffs is declared... yes
+    digitalocean: checking for getaddrinfo... yes
+    digitalocean: checking for library containing putmsg... no
+    digitalocean: checking whether getnetbyname_r is declared... yes
+    digitalocean: checking for the Linux getnetbyname_r()... yes
+    digitalocean: checking whether getprotobyname_r is declared... yes
+    digitalocean: checking for the Linux getprotobyname_r()... yes
+    digitalocean: checking for ether_hostton... yes
+    digitalocean: checking whether ether_hostton is declared... no
+    digitalocean: checking whether ether_hostton is declared... yes
+    digitalocean: checking pthread.h usability... yes
+    digitalocean: checking pthread.h presence... yes
+    digitalocean: checking for pthread.h... yes
+    digitalocean: checking for pthread_create... no
+    digitalocean: checking for pthread_create in -lpthreads... no
+    digitalocean: checking for pthread_create in -lpthread... yes
+    digitalocean: checking if --disable-protochain option is specified... enabled
+    digitalocean: checking net/bpf.h usability... no
+    digitalocean: checking net/bpf.h presence... no
+    digitalocean: checking for net/bpf.h... no
+    digitalocean: checking net/pfilt.h usability... no
+    digitalocean: checking net/pfilt.h presence... no
+    digitalocean: checking for net/pfilt.h... no
+    digitalocean: checking net/enet.h usability... no
+    digitalocean: checking net/enet.h presence... no
+    digitalocean: checking for net/enet.h... no
+    digitalocean: checking net/nit.h usability... no
+    digitalocean: checking net/nit.h presence... no
+    digitalocean: checking for net/nit.h... no
+    digitalocean: checking sys/net/nit.h usability... no
+    digitalocean: checking sys/net/nit.h presence... no
+    digitalocean: checking for sys/net/nit.h... no
+    digitalocean: checking linux/socket.h usability... yes
+    digitalocean: checking linux/socket.h presence... yes
+    digitalocean: checking for linux/socket.h... yes
+    digitalocean: checking net/raw.h usability... no
+    digitalocean: checking net/raw.h presence... no
+    digitalocean: checking for net/raw.h... no
+    digitalocean: checking sys/dlpi.h usability... no
+    digitalocean: checking sys/dlpi.h presence... no
+    digitalocean: checking for sys/dlpi.h... no
+    digitalocean: checking packet capture type... linux
+    digitalocean: checking for linux/wireless.h... yes
+    digitalocean: checking for linux/ethtool.h... yes
+    digitalocean: checking for struct tpacket_stats... yes
+    digitalocean: checking for struct tpacket_auxdata.tp_vlan_tci... yes
+    digitalocean: checking for getifaddrs... yes
+    digitalocean: checking ifaddrs.h usability... yes
+    digitalocean: checking ifaddrs.h presence... yes
+    digitalocean: checking for ifaddrs.h... yes
+    digitalocean: checking linux/net_tstamp.h usability... yes
+    digitalocean: checking linux/net_tstamp.h presence... yes
+    digitalocean: checking for linux/net_tstamp.h... yes
+    digitalocean: checking for socklen_t... yes
+    digitalocean: checking dagapi.h usability... no
+    digitalocean: checking dagapi.h presence... no
+    digitalocean: checking for dagapi.h... no
+    digitalocean: checking whether we have Septel API headers... no
+    digitalocean: checking whether we have Myricom Sniffer API... no
+    digitalocean: checking whether TurboCap is supported... no
+    digitalocean: checking whether to enable remote packet capture... no
+    digitalocean: checking whether to build optimizer debugging code... no
+    digitalocean: checking whether to build parser debugging code... no
+    digitalocean: checking for ranlib... ranlib
+    digitalocean: checking for ar... ar
+    digitalocean: checking whether ln -s works... yes
+    digitalocean: checking for struct sockaddr.sa_len... no
+    digitalocean: checking for struct sockaddr_storage... yes
+    digitalocean: checking for dl_hp_ppa_info_t.dl_module_id_1... no
+    digitalocean: checking if unaligned accesses fail... no
+    digitalocean: checking whether the platform could support netfilter sniffing... yes
+    digitalocean: checking whether we can compile the netfilter support... yes
+    digitalocean: checking whether we can compile the netmap support... no
+    digitalocean: checking for ibv_get_device_list in -libverbs... no
+    digitalocean: checking for a BSD-compatible install... /usr/bin/install -c
+    digitalocean: configure: creating ./config.status
+    digitalocean: config.status: creating Makefile
+    digitalocean: config.status: creating pcap-filter.manmisc
+    digitalocean: config.status: creating pcap-linktype.manmisc
+    digitalocean: config.status: creating pcap-tstamp.manmisc
+    digitalocean: config.status: creating pcap-savefile.manfile
+    digitalocean: config.status: creating pcap.3pcap
+    digitalocean: config.status: creating pcap_compile.3pcap
+    digitalocean: config.status: creating pcap_datalink.3pcap
+    digitalocean: config.status: creating pcap_dump_open.3pcap
+    digitalocean: config.status: creating pcap_get_tstamp_precision.3pcap
+    digitalocean: config.status: creating pcap_list_datalinks.3pcap
+    digitalocean: config.status: creating pcap_list_tstamp_types.3pcap
+    digitalocean: config.status: creating pcap_open_dead.3pcap
+    digitalocean: config.status: creating pcap_open_offline.3pcap
+    digitalocean: config.status: creating pcap_set_immediate_mode.3pcap
+    digitalocean: config.status: creating pcap_set_tstamp_precision.3pcap
+    digitalocean: config.status: creating pcap_set_tstamp_type.3pcap
+    digitalocean: config.status: creating config.h
+    digitalocean: config.status: executing default-1 commands
+    digitalocean: === configuring in libpcre (/home/op/recon/nmap/libpcre)
+    digitalocean: configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--without-ndiff' '--without-zenmap' '--without-nping' '--without-ncat' '--without-nmap-update' '--with-libpcap=included' --cache-file=/dev/null --srcdir=.
+    digitalocean: checking for a BSD-compatible install... /usr/bin/install -c
+    digitalocean: checking whether build environment is sane... yes
+    digitalocean: checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+    digitalocean: checking for gawk... gawk
+    digitalocean: checking whether make sets $(MAKE)... yes
+    digitalocean: checking for gcc... gcc
+    digitalocean: checking whether the C compiler works... yes
+    digitalocean: checking for C compiler default output file name... a.out
+    digitalocean: checking for suffix of executables...
+    digitalocean: checking whether we are cross compiling... no
+    digitalocean: checking for suffix of object files... o
+    digitalocean: checking whether we are using the GNU C compiler... yes
+    digitalocean: checking whether gcc accepts -g... yes
+    digitalocean: checking for gcc option to accept ISO C89... none needed
+    digitalocean: checking for style of include used by make... GNU
+    digitalocean: checking dependency style of gcc... gcc3
+    digitalocean: checking for ranlib... ranlib
+    digitalocean: checking whether ln -s works... yes
+    digitalocean: checking how to run the C preprocessor... gcc -E
+    digitalocean: checking for grep that handles long lines and -e... /usr/bin/grep
+    digitalocean: checking for egrep... /usr/bin/grep -E
+    digitalocean: checking for ANSI C header files... yes
+    digitalocean: checking for sys/types.h... yes
+    digitalocean: checking for sys/stat.h... yes
+    digitalocean: checking for stdlib.h... yes
+    digitalocean: checking for string.h... yes
+    digitalocean: checking for memory.h... yes
+    digitalocean: checking for strings.h... yes
+    digitalocean: checking for inttypes.h... yes
+    digitalocean: checking for stdint.h... yes
+    digitalocean: checking for unistd.h... yes
+    digitalocean: checking limits.h usability... yes
+    digitalocean: checking limits.h presence... yes
+    digitalocean: checking for limits.h... yes
+    digitalocean: checking for sys/types.h... (cached) yes
+    digitalocean: checking for sys/stat.h... (cached) yes
+    digitalocean: checking dirent.h usability... yes
+    digitalocean: checking dirent.h presence... yes
+    digitalocean: checking for dirent.h... yes
+    digitalocean: checking windows.h usability... no
+    digitalocean: checking windows.h presence... no
+    digitalocean: checking for windows.h... no
+    digitalocean: checking for an ANSI C-conforming const... yes
+    digitalocean: checking for size_t... yes
+    digitalocean: checking for long long... yes
+    digitalocean: checking for unsigned long long... yes
+    digitalocean: checking for bcopy... yes
+    digitalocean: checking for memmove... yes
+    digitalocean: checking for strerror... yes
+    digitalocean: checking for strtoq... yes
+    digitalocean: checking for strtoll... yes
+    digitalocean: checking for _strtoi64... no
+    digitalocean: checking zlib.h usability... yes
+    digitalocean: checking zlib.h presence... yes
+    digitalocean: checking for zlib.h... yes
+    digitalocean: checking for gzopen in -lz... yes
+    digitalocean: checking bzlib.h usability... yes
+    digitalocean: checking bzlib.h presence... yes
+    digitalocean: checking for bzlib.h... yes
+    digitalocean: checking for BZ2_bzopen in -lbz2... yes
+    digitalocean: checking readline/readline.h usability... yes
+    digitalocean: checking readline/readline.h presence... yes
+    digitalocean: checking for readline/readline.h... yes
+    digitalocean: checking readline/history.h usability... yes
+    digitalocean: checking readline/history.h presence... yes
+    digitalocean: checking for readline/history.h... yes
+    digitalocean: checking for readline in -lreadline... yes
+    digitalocean: checking build system type... x86_64-unknown-linux-gnu
+    digitalocean: checking host system type... x86_64-unknown-linux-gnu
+    digitalocean: configure: creating ./config.status
+    digitalocean: config.status: creating Makefile
+    digitalocean: config.status: creating pcre-config
+    digitalocean: config.status: creating config.h
+    digitalocean: config.status: executing depfiles commands
+    digitalocean: config.status: executing script-chmod commands
+    digitalocean: === configuring in libssh2 (/home/op/recon/nmap/libssh2)
+    digitalocean: configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--without-ndiff' '--without-zenmap' '--without-nping' '--without-ncat' '--without-nmap-update' '--with-libpcap=included' --cache-file=/dev/null --srcdir=.
+    digitalocean: checking whether to enable maintainer-specific portions of Makefiles... no
+    digitalocean: checking whether make supports nested variables... yes
+    digitalocean: checking for sed... /usr/bin/sed
+    digitalocean: checking for a BSD-compatible install... /usr/bin/install -c
+    digitalocean: checking whether build environment is sane... yes
+    digitalocean: checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+    digitalocean: checking for gawk... gawk
+    digitalocean: checking whether make sets $(MAKE)... yes
+    digitalocean: checking libssh2 version... 1.9.0
+    digitalocean: checking build system type... x86_64-pc-linux-gnu
+    digitalocean: checking host system type... x86_64-pc-linux-gnu
+    digitalocean: configure: autobuild project... libssh2
+    digitalocean: configure: autobuild revision... 1.9.0
+    digitalocean: configure: autobuild hostname... packer-650a3e9e-0cdf-e601-9402-e11251eef043
+    digitalocean: configure: autobuild timestamp... 20230920-003922
+    digitalocean: checking whether make supports the include directive... yes (GNU style)
+    digitalocean: checking for gcc... gcc
+    digitalocean: checking whether the C compiler works... yes
+    digitalocean: checking for C compiler default output file name... a.out
+    digitalocean: checking for suffix of executables...
+    digitalocean: checking whether we are cross compiling... no
+    digitalocean: checking for suffix of object files... o
+    digitalocean: checking whether we are using the GNU C compiler... yes
+    digitalocean: checking whether gcc accepts -g... yes
+    digitalocean: checking for gcc option to accept ISO C89... none needed
+    digitalocean: checking whether gcc understands -c and -o together... yes
+    digitalocean: checking dependency style of gcc... gcc3
+    digitalocean: checking how to run the C preprocessor... gcc -E
+    digitalocean: checking for grep that handles long lines and -e... /usr/bin/grep
+    digitalocean: checking for egrep... /usr/bin/grep -E
+    digitalocean: checking for ANSI C header files... yes
+    digitalocean: checking for sys/types.h... yes
+    digitalocean: checking for sys/stat.h... yes
+    digitalocean: checking for stdlib.h... yes
+    digitalocean: checking for string.h... yes
+    digitalocean: checking for memory.h... yes
+    digitalocean: checking for strings.h... yes
+    digitalocean: checking for inttypes.h... yes
+    digitalocean: checking for stdint.h... yes
+    digitalocean: checking for unistd.h... yes
+    digitalocean: checking for long long... yes
+    digitalocean: checking if _REENTRANT is already defined... no
+    digitalocean: checking if _REENTRANT is actually needed... no
+    digitalocean: checking if _REENTRANT is onwards defined... no
+    digitalocean: checking for library containing socket... none required
+    digitalocean: checking for library containing inet_addr... none required
+    digitalocean: checking for gcc... (cached) gcc
+    digitalocean: checking whether we are using the GNU C compiler... (cached) yes
+    digitalocean: checking whether gcc accepts -g... (cached) yes
+    digitalocean: checking for gcc option to accept ISO C89... (cached) none needed
+    digitalocean: checking whether gcc understands -c and -o together... (cached) yes
+    digitalocean: checking dependency style of gcc... (cached) gcc3
+    digitalocean: checking whether ln -s works... yes
+    digitalocean: checking whether make sets $(MAKE)... (cached) yes
+    digitalocean: checking for sshd... /usr/sbin/sshd
+    digitalocean: checking how to print strings... printf
+    digitalocean: checking for a sed that does not truncate output... (cached) /usr/bin/sed
+    digitalocean: checking for fgrep... /usr/bin/grep -F
+    digitalocean: checking for ld used by gcc... /usr/bin/ld
+    digitalocean: checking if the linker (/usr/bin/ld) is GNU ld... yes
+    digitalocean: checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+    digitalocean: checking the name lister (/usr/bin/nm -B) interface... BSD nm
+    digitalocean: checking the maximum length of command line arguments... 1572864
+    digitalocean: checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+    digitalocean: checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+    digitalocean: checking for /usr/bin/ld option to reload object files... -r
+    digitalocean: checking for objdump... objdump
+    digitalocean: checking how to recognize dependent libraries... pass_all
+    digitalocean: checking for dlltool... dlltool
+    digitalocean: checking how to associate runtime and link libraries... printf %s\n
+    digitalocean: checking for ar... ar
+    digitalocean: checking for archiver @FILE support... @
+    digitalocean: checking for strip... strip
+    digitalocean: checking for ranlib... ranlib
+    digitalocean: checking command to parse /usr/bin/nm -B output from gcc object... ok
+    digitalocean: checking for sysroot... no
+    digitalocean: checking for a working dd... /usr/bin/dd
+    digitalocean: checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+    digitalocean: checking for mt... mt
+    digitalocean: checking if mt is a manifest tool... no
+    digitalocean: checking for dlfcn.h... yes
+    digitalocean: checking for objdir... .libs
+    digitalocean: checking if gcc supports -fno-rtti -fno-exceptions... no
+    digitalocean: checking for gcc option to produce PIC... -fPIC -DPIC
+    digitalocean: checking if gcc PIC flag -fPIC -DPIC works... yes
+    digitalocean: checking if gcc static flag -static works... yes
+    digitalocean: checking if gcc supports -c -o file.o... yes
+    digitalocean: checking if gcc supports -c -o file.o... (cached) yes
+    digitalocean: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+    digitalocean: checking whether -lc should be explicitly linked in... no
+    digitalocean: checking dynamic linker characteristics... GNU/Linux ld.so
+    digitalocean: checking how to hardcode library paths into programs... immediate
+    digitalocean: checking whether stripping libraries is possible... yes
+    digitalocean: checking if libtool supports shared libraries... yes
+    digitalocean: checking whether to build shared libraries... yes
+    digitalocean: checking whether to build static libraries... yes
+    digitalocean: checking whether byte ordering is bigendian... no
+    digitalocean: checking for special C compiler options needed for large files... no
+    digitalocean: checking for _FILE_OFFSET_BITS value needed for large files... no
+    digitalocean: checking for ld used by GCC... /usr/bin/ld -m elf_x86_64
+    digitalocean: checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+    digitalocean: checking for shared library run path origin... done
+    digitalocean: checking for libssl... yes
+    digitalocean: checking how to link with libssl... -lssl -lcrypto
+    digitalocean: checking for EVP_aes_128_ctr... yes
+    digitalocean: checking for libz... yes
+    digitalocean: checking how to link with libz... -lz
+    digitalocean: checking whether to enable pedantic and debug compiler options... no
+    digitalocean: checking whether to enable hidden symbols in the library... no
+==> digitalocean: configure: WARNING: secure clearing/zeroing of memory is not supported by the selected crypto backend
+    digitalocean: checking errno.h usability... yes
+    digitalocean: checking errno.h presence... yes
+    digitalocean: checking for errno.h... yes
+    digitalocean: checking fcntl.h usability... yes
+    digitalocean: checking fcntl.h presence... yes
+    digitalocean: checking for fcntl.h... yes
+    digitalocean: checking stdio.h usability... yes
+    digitalocean: checking stdio.h presence... yes
+    digitalocean: checking for stdio.h... yes
+    digitalocean: checking for stdlib.h... (cached) yes
+    digitalocean: checking for unistd.h... (cached) yes
+    digitalocean: checking sys/uio.h usability... yes
+    digitalocean: checking sys/uio.h presence... yes
+    digitalocean: checking for sys/uio.h... yes
+    digitalocean: checking sys/select.h usability... yes
+    digitalocean: checking sys/select.h presence... yes
+    digitalocean: checking for sys/select.h... yes
+    digitalocean: checking sys/socket.h usability... yes
+    digitalocean: checking sys/socket.h presence... yes
+    digitalocean: checking for sys/socket.h... yes
+    digitalocean: checking sys/ioctl.h usability... yes
+    digitalocean: checking sys/ioctl.h presence... yes
+    digitalocean: checking for sys/ioctl.h... yes
+    digitalocean: checking sys/time.h usability... yes
+    digitalocean: checking sys/time.h presence... yes
+    digitalocean: checking for sys/time.h... yes
+    digitalocean: checking arpa/inet.h usability... yes
+    digitalocean: checking arpa/inet.h presence... yes
+    digitalocean: checking for arpa/inet.h... yes
+    digitalocean: checking netinet/in.h usability... yes
+    digitalocean: checking netinet/in.h presence... yes
+    digitalocean: checking for netinet/in.h... yes
+    digitalocean: checking sys/un.h usability... yes
+    digitalocean: checking sys/un.h presence... yes
+    digitalocean: checking for sys/un.h... yes
+    digitalocean: checking windows.h usability... no
+    digitalocean: checking windows.h presence... no
+    digitalocean: checking for windows.h... no
+    digitalocean: checking winsock2.h usability... no
+    digitalocean: checking winsock2.h presence... no
+    digitalocean: checking for winsock2.h... no
+    digitalocean: checking ws2tcpip.h usability... no
+    digitalocean: checking ws2tcpip.h presence... no
+    digitalocean: checking for ws2tcpip.h... no
+    digitalocean: checking for poll... yes
+    digitalocean: checking for gettimeofday... yes
+    digitalocean: checking for select... yes
+    digitalocean: checking for strtoll... yes
+    digitalocean: checking for memset_s... no
+    digitalocean: checking for size_t... yes
+    digitalocean: checking for working alloca.h... yes
+    digitalocean: checking for alloca... yes
+    digitalocean: checking for an ANSI C-conforming const... yes
+    digitalocean: checking for inline... inline
+    digitalocean: checking non-blocking sockets style... O_NONBLOCK
+    digitalocean: checking whether to enable compiler warnings as errors... no
+    digitalocean: checking that generated files are newer than configure... done
+    digitalocean: configure: creating ./config.status
+    digitalocean: config.status: creating Makefile
+    digitalocean: config.status: creating src/Makefile
+    digitalocean: config.status: creating libssh2.pc
+    digitalocean: config.status: creating src/libssh2_config.h
+    digitalocean: config.status: executing depfiles commands
+    digitalocean: config.status: executing libtool commands
+    digitalocean: configure: summary of build options:
+    digitalocean:
+    digitalocean:   version:          1.9.0
+    digitalocean:   Host type:        x86_64-pc-linux-gnu
+    digitalocean:   Install prefix:   /usr/local
+    digitalocean:   Compiler:         gcc
+    digitalocean:   Compiler flags:   -g -O2
+    digitalocean:   Library types:    Shared=yes, Static=yes
+    digitalocean:   Crypto library:   OpenSSL (AES-CTR: yes)
+    digitalocean:   Clear memory:     unsupported
+    digitalocean:   Debug build:      no
+    digitalocean:   Path to sshd:     /usr/sbin/sshd (only for self-tests)
+    digitalocean:   zlib compression: yes
+    digitalocean:
+    digitalocean: === configuring in libdnet-stripped (/home/op/recon/nmap/libdnet-stripped)
+    digitalocean: configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--without-ndiff' '--without-zenmap' '--without-nping' '--without-ncat' '--without-nmap-update' '--with-libpcap=included' --cache-file=/dev/null --srcdir=.
+    digitalocean: checking for a BSD-compatible install... /usr/bin/install -c
+    digitalocean: checking whether build environment is sane... yes
+    digitalocean: checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+    digitalocean: checking for gawk... gawk
+    digitalocean: checking whether make sets $(MAKE)... yes
+    digitalocean: checking whether to enable maintainer-specific portions of Makefiles... no
+    digitalocean: checking build system type... x86_64-unknown-linux-gnu
+    digitalocean: checking host system type... x86_64-unknown-linux-gnu
+    digitalocean: checking for gcc... gcc
+    digitalocean: checking whether the C compiler works... yes
+    digitalocean: checking for C compiler default output file name... a.out
+    digitalocean: checking for suffix of executables...
+    digitalocean: checking whether we are cross compiling... no
+    digitalocean: checking for suffix of object files... o
+    digitalocean: checking whether we are using the GNU C compiler... yes
+    digitalocean: checking whether gcc accepts -g... yes
+    digitalocean: checking for gcc option to accept ISO C89... none needed
+    digitalocean: checking for style of include used by make... GNU
+    digitalocean: checking dependency style of gcc... gcc3
+    digitalocean: checking for a sed that does not truncate output... /usr/bin/sed
+    digitalocean: checking for grep that handles long lines and -e... /usr/bin/grep
+    digitalocean: checking for egrep... /usr/bin/grep -E
+    digitalocean: checking for fgrep... /usr/bin/grep -F
+    digitalocean: checking for ld used by gcc... /usr/bin/ld
+    digitalocean: checking if the linker (/usr/bin/ld) is GNU ld... yes
+    digitalocean: checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+    digitalocean: checking the name lister (/usr/bin/nm -B) interface... BSD nm
+    digitalocean: checking whether ln -s works... yes
+    digitalocean: checking the maximum length of command line arguments... 1572864
+    digitalocean: checking whether the shell understands some XSI constructs... yes
+    digitalocean: checking whether the shell understands "+="... yes
+    digitalocean: checking for /usr/bin/ld option to reload object files... -r
+    digitalocean: checking for objdump... objdump
+    digitalocean: checking how to recognize dependent libraries... pass_all
+    digitalocean: checking for ar... ar
+    digitalocean: checking for strip... strip
+    digitalocean: checking for ranlib... ranlib
+    digitalocean: checking command to parse /usr/bin/nm -B output from gcc object... ok
+    digitalocean: checking how to run the C preprocessor... gcc -E
+    digitalocean: checking for ANSI C header files... yes
+    digitalocean: checking for sys/types.h... yes
+    digitalocean: checking for sys/stat.h... yes
+    digitalocean: checking for stdlib.h... yes
+    digitalocean: checking for string.h... yes
+    digitalocean: checking for memory.h... yes
+    digitalocean: checking for strings.h... yes
+    digitalocean: checking for inttypes.h... yes
+    digitalocean: checking for stdint.h... yes
+    digitalocean: checking for unistd.h... yes
+    digitalocean: checking for dlfcn.h... yes
+    digitalocean: checking for objdir... .libs
+    digitalocean: checking if gcc supports -fno-rtti -fno-exceptions... no
+    digitalocean: checking for gcc option to produce PIC... -fPIC -DPIC
+    digitalocean: checking if gcc PIC flag -fPIC -DPIC works... yes
+    digitalocean: checking if gcc static flag -static works... yes
+    digitalocean: checking if gcc supports -c -o file.o... yes
+    digitalocean: checking if gcc supports -c -o file.o... (cached) yes
+    digitalocean: checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+    digitalocean: checking dynamic linker characteristics... GNU/Linux ld.so
+    digitalocean: checking how to hardcode library paths into programs... immediate
+    digitalocean: checking for shl_load... no
+    digitalocean: checking for shl_load in -ldld... no
+    digitalocean: checking for dlopen... no
+    digitalocean: checking for dlopen in -ldl... yes
+    digitalocean: checking whether a program can dlopen itself... yes
+    digitalocean: checking whether a statically linked program can dlopen itself... no
+    digitalocean: checking whether stripping libraries is possible... yes
+    digitalocean: checking if libtool supports shared libraries... yes
+    digitalocean: checking whether to build shared libraries... no
+    digitalocean: checking whether to build static libraries... yes
+    digitalocean: checking for Python... checking for gethostbyname... yes
+    digitalocean: checking for socket... yes
+    digitalocean: checking for putmsg in -lstr... no
+    digitalocean: checking for open_mib in -lnm... no
+    digitalocean: checking for Check... no
+    digitalocean: checking for ANSI C header files... (cached) yes
+    digitalocean: checking fcntl.h usability... yes
+    digitalocean: checking fcntl.h presence... yes
+    digitalocean: checking for fcntl.h... yes
+    digitalocean: checking for unistd.h... (cached) yes
+    digitalocean: checking sys/bufmod.h usability... no
+    digitalocean: checking sys/bufmod.h presence... no
+    digitalocean: checking for sys/bufmod.h... no
+    digitalocean: checking sys/dlpi.h usability... no
+    digitalocean: checking sys/dlpi.h presence... no
+    digitalocean: checking for sys/dlpi.h... no
+    digitalocean: checking sys/dlpihdr.h usability... no
+    digitalocean: checking sys/dlpihdr.h presence... no
+    digitalocean: checking for sys/dlpihdr.h... no
+    digitalocean: checking sys/dlpi_ext.h usability... no
+    digitalocean: checking sys/dlpi_ext.h presence... no
+    digitalocean: checking for sys/dlpi_ext.h... no
+    digitalocean: checking sys/ioctl.h usability... yes
+    digitalocean: checking sys/ioctl.h presence... yes
+    digitalocean: checking for sys/ioctl.h... yes
+    digitalocean: checking sys/mib.h usability... no
+    digitalocean: checking sys/mib.h presence... no
+    digitalocean: checking for sys/mib.h... no
+    digitalocean: checking sys/ndd_var.h usability... no
+    digitalocean: checking sys/ndd_var.h presence... no
+    digitalocean: checking for sys/ndd_var.h... no
+    digitalocean: checking sys/socket.h usability... yes
+    digitalocean: checking sys/socket.h presence... yes
+    digitalocean: checking for sys/socket.h... yes
+    digitalocean: checking sys/sockio.h usability... no
+    digitalocean: checking sys/sockio.h presence... no
+    digitalocean: checking for sys/sockio.h... no
+    digitalocean: checking sys/sysctl.h usability... yes
+    digitalocean: checking sys/sysctl.h presence... yes
+    digitalocean: checking for sys/sysctl.h... yes
+    digitalocean: checking sys/time.h usability... yes
+    digitalocean: checking sys/time.h presence... yes
+    digitalocean: checking for sys/time.h... yes
+    digitalocean: checking for sys/types.h... (cached) yes
+    digitalocean: checking net/bpf.h usability... no
+    digitalocean: checking net/bpf.h presence... no
+    digitalocean: checking for net/bpf.h... no
+    digitalocean: checking net/if.h usability... yes
+    digitalocean: checking net/if.h presence... yes
+    digitalocean: checking for net/if.h... yes
+    digitalocean: checking net/if_var.h usability... no
+    digitalocean: checking net/if_var.h presence... no
+    digitalocean: checking for net/if_var.h... no
+    digitalocean: checking net/if_arp.h usability... yes
+    digitalocean: checking net/if_arp.h presence... yes
+    digitalocean: checking for net/if_arp.h... yes
+    digitalocean: checking net/if_dl.h usability... no
+    digitalocean: checking net/if_dl.h presence... no
+    digitalocean: checking for net/if_dl.h... no
+    digitalocean: checking net/pfilt.h usability... no
+    digitalocean: checking net/pfilt.h presence... no
+    digitalocean: checking for net/pfilt.h... no
+    digitalocean: checking net/pfvar.h usability... no
+    digitalocean: checking net/pfvar.h presence... no
+    digitalocean: checking for net/pfvar.h... no
+    digitalocean: checking net/radix.h usability... no
+    digitalocean: checking net/radix.h presence... no
+    digitalocean: checking for net/radix.h... no
+    digitalocean: checking net/raw.h usability... no
+    digitalocean: checking net/raw.h presence... no
+    digitalocean: checking for net/raw.h... no
+    digitalocean: checking netinet/in_var.h usability... no
+    digitalocean: checking netinet/in_var.h presence... no
+    digitalocean: checking for netinet/in_var.h... no
+    digitalocean: checking netinet/in6_var.h usability... no
+    digitalocean: checking netinet/in6_var.h presence... no
+    digitalocean: checking for netinet/in6_var.h... no
+    digitalocean: checking net/if_tun.h usability... no
+    digitalocean: checking net/if_tun.h presence... no
+    digitalocean: checking for net/if_tun.h... no
+    digitalocean: checking linux/if_tun.h usability... yes
+    digitalocean: checking linux/if_tun.h presence... yes
+    digitalocean: checking for linux/if_tun.h... yes
+    digitalocean: checking netinet/ip_fw.h usability... no
+    digitalocean: checking netinet/ip_fw.h presence... no
+    digitalocean: checking for netinet/ip_fw.h... no
+    digitalocean: checking linux/ip_fw.h usability... no
+    digitalocean: checking linux/ip_fw.h presence... no
+    digitalocean: checking for linux/ip_fw.h... no
+    digitalocean: checking linux/ip_fwchains.h usability... no
+    digitalocean: checking linux/ip_fwchains.h presence... no
+    digitalocean: checking for linux/ip_fwchains.h... no
+    digitalocean: checking linux/netfilter_ipv4/ipchains_core.h usability... no
+    digitalocean: checking linux/netfilter_ipv4/ipchains_core.h presence... no
+    digitalocean: checking for linux/netfilter_ipv4/ipchains_core.h... no
+    digitalocean: checking ip_fil_compat.h usability... no
+    digitalocean: checking ip_fil_compat.h presence... no
+    digitalocean: checking for ip_fil_compat.h... no
+    digitalocean: checking netinet/ip_fil_compat.h usability... no
+    digitalocean: checking netinet/ip_fil_compat.h presence... no
+    digitalocean: checking for netinet/ip_fil_compat.h... no
+    digitalocean: checking ip_compat.h usability... no
+    digitalocean: checking ip_compat.h presence... no
+    digitalocean: checking for ip_compat.h... no
+    digitalocean: checking netinet/ip_compat.h usability... no
+    digitalocean: checking netinet/ip_compat.h presence... no
+    digitalocean: checking for netinet/ip_compat.h... no
+    digitalocean: checking ip_fil.h usability... no
+    digitalocean: checking ip_fil.h presence... no
+    digitalocean: checking for ip_fil.h... no
+    digitalocean: checking netinet/ip_fil.h usability... no
+    digitalocean: checking netinet/ip_fil.h presence... no
+    digitalocean: checking for netinet/ip_fil.h... no
+    digitalocean: checking hpsecurity.h usability... no
+    digitalocean: checking hpsecurity.h presence... no
+    digitalocean: checking for hpsecurity.h... no
+    digitalocean: checking stropts.h usability... no
+    digitalocean: checking stropts.h presence... no
+    digitalocean: checking for stropts.h... no
+    digitalocean: checking for net/route.h... yes
+    digitalocean: checking for an ANSI C-conforming const... yes
+    digitalocean: checking for inline... inline
+    digitalocean: checking for pid_t... yes
+    digitalocean: checking for size_t... yes
+    digitalocean: checking for sockaddr_in6 struct in <netinet/in.h>... yes
+    digitalocean: checking for sa_len in sockaddr struct... no
+    digitalocean: checking for arp_dev in arpreq struct... yes
+    digitalocean: checking for rt_msghdr struct in <net/route.h>... no
+    digitalocean: checking whether gcc needs -traditional... no
+    digitalocean: checking for socklen_t... yes
+    digitalocean: checking for working memcmp... yes
+    digitalocean: checking for err... yes
+    digitalocean: checking for strlcpy... no
+    digitalocean: checking for strsep... yes
+    digitalocean: checking for Berkeley Packet Filter... no
+    digitalocean: checking for Linux proc filesystem... yes
+    digitalocean: checking whether ETH_P_ALL is declared... yes
+    digitalocean: checking for Linux PF_PACKET sockets... yes
+    digitalocean: checking for SNMP MIB2 STREAMS... no
+    digitalocean: checking for route(7) STREAMS... no
+    digitalocean: checking for arp(7) ioctls... yes
+    digitalocean: checking for raw IP sockets ip_{len,off} host byte ordering... no
+    digitalocean: checking for cooked raw IP sockets... no
+    digitalocean: checking for getkerninfo... no
+    digitalocean: configure: creating ./config.status
+    digitalocean: config.status: creating Makefile
+    digitalocean: config.status: creating dnet-config
+    digitalocean: config.status: creating include/Makefile
+    digitalocean: config.status: creating include/dnet/Makefile
+    digitalocean: config.status: creating src/Makefile
+    digitalocean: config.status: creating include/config.h
+    digitalocean: config.status: executing depfiles commands
+    digitalocean: config.status: executing libtool commands
+    digitalocean: config.status: executing default commands
+    digitalocean: === configuring in nbase (/home/op/recon/nmap/nbase)
+    digitalocean: configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--without-ndiff' '--without-zenmap' '--without-nping' '--without-ncat' '--without-nmap-update' '--with-libpcap=included' --cache-file=/dev/null --srcdir=.
+    digitalocean: checking for gcc... gcc
+    digitalocean: checking whether the C compiler works... yes
+    digitalocean: checking for C compiler default output file name... a.out
+    digitalocean: checking for suffix of executables...
+    digitalocean: checking whether we are cross compiling... no
+    digitalocean: checking for suffix of object files... o
+    digitalocean: checking whether we are using the GNU C compiler... yes
+    digitalocean: checking whether gcc accepts -g... yes
+    digitalocean: checking for gcc option to accept ISO C89... none needed
+    digitalocean: checking for ranlib... ranlib
+    digitalocean: checking build system type... x86_64-unknown-linux-gnu
+    digitalocean: checking host system type... x86_64-unknown-linux-gnu
+    digitalocean: checking for inline... inline
+    digitalocean: checking how to run the C preprocessor... gcc -E
+    digitalocean: checking for grep that handles long lines and -e... /usr/bin/grep
+    digitalocean: checking for egrep... /usr/bin/grep -E
+    digitalocean: checking for ANSI C header files... yes
+    digitalocean: checking for sys/types.h... yes
+    digitalocean: checking for sys/stat.h... yes
+    digitalocean: checking for stdlib.h... yes
+    digitalocean: checking for string.h... yes
+    digitalocean: checking for memory.h... yes
+    digitalocean: checking for strings.h... yes
+    digitalocean: checking for inttypes.h... yes
+    digitalocean: checking for stdint.h... yes
+    digitalocean: checking for unistd.h... yes
+    digitalocean: checking for string.h... (cached) yes
+    digitalocean: checking getopt.h usability... yes
+    digitalocean: checking getopt.h presence... yes
+    digitalocean: checking for getopt.h... yes
+    digitalocean: checking for strings.h... (cached) yes
+    digitalocean: checking sys/param.h usability... yes
+    digitalocean: checking sys/param.h presence... yes
+    digitalocean: checking for sys/param.h... yes
+    digitalocean: checking sys/time.h usability... yes
+    digitalocean: checking sys/time.h presence... yes
+    digitalocean: checking for sys/time.h... yes
+    digitalocean: checking for unistd.h... (cached) yes
+    digitalocean: checking errno.h usability... yes
+    digitalocean: checking errno.h presence... yes
+    digitalocean: checking for errno.h... yes
+    digitalocean: checking sys/select.h usability... yes
+    digitalocean: checking sys/select.h presence... yes
+    digitalocean: checking for sys/select.h... yes
+    digitalocean: checking for sys/types.h... (cached) yes
+    digitalocean: checking sys/socket.h usability... yes
+    digitalocean: checking sys/socket.h presence... yes
+    digitalocean: checking for sys/socket.h... yes
+    digitalocean: checking netinet/in.h usability... yes
+    digitalocean: checking netinet/in.h presence... yes
+    digitalocean: checking for netinet/in.h... yes
+    digitalocean: checking arpa/inet.h usability... yes
+    digitalocean: checking arpa/inet.h presence... yes
+    digitalocean: checking for arpa/inet.h... yes
+    digitalocean: checking for sys/stat.h... (cached) yes
+    digitalocean: checking netdb.h usability... yes
+    digitalocean: checking netdb.h presence... yes
+    digitalocean: checking for netdb.h... yes
+    digitalocean: checking sys/wait.h usability... yes
+    digitalocean: checking sys/wait.h presence... yes
+    digitalocean: checking for sys/wait.h... yes
+    digitalocean: checking fcntl.h usability... yes
+    digitalocean: checking fcntl.h presence... yes
+    digitalocean: checking for fcntl.h... yes
+    digitalocean: checking sys/resource.h usability... yes
+    digitalocean: checking sys/resource.h presence... yes
+    digitalocean: checking for sys/resource.h... yes
+    digitalocean: checking for inttypes.h... (cached) yes
+    digitalocean: checking mach-o/dyld.h usability... no
+    digitalocean: checking mach-o/dyld.h presence... no
+    digitalocean: checking for mach-o/dyld.h... no
+    digitalocean: checking whether time.h and sys/time.h may both be included... yes
+    digitalocean: checking for sys/socket.h... (cached) yes
+    digitalocean: checking for net/if.h... yes
+    digitalocean: checking for __attribute__... yes
+    digitalocean: checking if sockaddr{} has sa_len member... no
+    digitalocean: checking whether byte ordering is bigendian... no
+    digitalocean: checking for int8_t... yes
+    digitalocean: checking for int16_t... yes
+    digitalocean: checking for int32_t... yes
+    digitalocean: checking for int64_t... yes
+    digitalocean: checking for uint8_t... yes
+    digitalocean: checking for uint16_t... yes
+    digitalocean: checking for uint32_t... yes
+    digitalocean: checking for uint64_t... yes
+    digitalocean: checking for snprintf... yes
+    digitalocean: checking for vsnprintf... yes
+    digitalocean: checking for nanosleep... yes
+    digitalocean: checking for strerror... yes
+    digitalocean: checking for strcasestr... yes
+    digitalocean: checking for strcasecmp... yes
+    digitalocean: checking for strncasecmp... yes
+    digitalocean: checking for signal... yes
+    digitalocean: checking for vsnprintf... (cached) yes
+    digitalocean: checking for snprintf... (cached) yes
+    digitalocean: checking for asprintf... yes
+    digitalocean: checking for asnprintf... no
+    digitalocean: checking for vasprintf... yes
+    digitalocean: checking for vasnprintf... no
+    digitalocean: checking for getopt... yes
+    digitalocean: checking for getopt_long_only... yes
+    digitalocean: checking for usleep... yes
+    digitalocean: checking for gettimeofday... yes
+    digitalocean: checking for sleep... yes
+    digitalocean: checking for localtime_s... no
+    digitalocean: checking for localtime_r... yes
+    digitalocean: checking for getopt_long_only... (cached) yes
+    digitalocean: checking for strcasecmp... (cached) yes
+    digitalocean: checking for strncasecmp... (cached) yes
+    digitalocean: checking for library containing getaddrinfo... none required
+    digitalocean: checking for library containing gai_strerror... none required
+    digitalocean: checking for library containing getnameinfo... none required
+    digitalocean: checking for library containing inet_ntop... none required
+    digitalocean: checking for library containing inet_pton... none required
+    digitalocean: checking for gai_strerror... yes
+    digitalocean: checking for inet_pton... yes
+    digitalocean: checking for inet_ntop... yes
+    digitalocean: checking for working getaddrinfo... yes
+    digitalocean: checking for library containing inet_addr... none required
+    digitalocean: checking for working getnameinfo... yes
+    digitalocean: checking for sockaddr_in6... yes
+    digitalocean: checking for sockaddr_storage... yes
+    digitalocean: checking for AF_INET6 definition... yes
+    digitalocean: checking for IPv6 support... yes
+    digitalocean: checking openssl/ssl.h usability... yes
+    digitalocean: checking openssl/ssl.h presence... yes
+    digitalocean: checking for openssl/ssl.h... yes
+    digitalocean: checking openssl/err.h usability... yes
+    digitalocean: checking openssl/err.h presence... yes
+    digitalocean: checking for openssl/err.h... yes
+    digitalocean: checking openssl/rand.h usability... yes
+    digitalocean: checking openssl/rand.h presence... yes
+    digitalocean: checking for openssl/rand.h... yes
+    digitalocean: checking for BIO_int_ctrl in -lcrypto... yes
+    digitalocean: checking for SSL_new in -lssl... yes
+    digitalocean: checking for /proc/self/exe... yes
+    digitalocean: configure: creating ./config.status
+    digitalocean: config.status: creating Makefile
+    digitalocean: config.status: creating nbase_config.h
+    digitalocean: === configuring in nsock/src (/home/op/recon/nmap/nsock/src)
+    digitalocean: configure: running /bin/bash ./configure --disable-option-checking '--prefix=/usr/local'  '--without-ndiff' '--without-zenmap' '--without-nping' '--without-ncat' '--without-nmap-update' '--with-libpcap=included' --cache-file=/dev/null --srcdir=.
+    digitalocean: checking build system type... x86_64-unknown-linux-gnu
+    digitalocean: checking host system type... x86_64-unknown-linux-gnu
+    digitalocean: checking for gcc... gcc
+    digitalocean: checking whether the C compiler works... yes
+    digitalocean: checking for C compiler default output file name... a.out
+    digitalocean: checking for suffix of executables...
+    digitalocean: checking whether we are cross compiling... no
+    digitalocean: checking for suffix of object files... o
+    digitalocean: checking whether we are using the GNU C compiler... yes
+    digitalocean: checking whether gcc accepts -g... yes
+    digitalocean: checking for gcc option to accept ISO C89... none needed
+    digitalocean: checking how to run the C preprocessor... gcc -E
+    digitalocean: checking for grep that handles long lines and -e... /usr/bin/grep
+    digitalocean: checking for egrep... /usr/bin/grep -E
+    digitalocean: checking for ANSI C header files... yes
+    digitalocean: checking for sys/types.h... yes
+    digitalocean: checking for sys/stat.h... yes
+    digitalocean: checking for stdlib.h... yes
+    digitalocean: checking for string.h... yes
+    digitalocean: checking for memory.h... yes
+    digitalocean: checking for strings.h... yes
+    digitalocean: checking for inttypes.h... yes
+    digitalocean: checking for stdint.h... yes
+    digitalocean: checking for unistd.h... yes
+    digitalocean: checking linux/version.h usability... yes
+    digitalocean: checking linux/version.h presence... yes
+    digitalocean: checking for linux/version.h... yes
+    digitalocean: checking for Linux epoll(7) interface... yes
+    digitalocean: checking for poll(2)... yes
+    digitalocean: checking for kqueue... no
+    digitalocean: checking for kevent... no
+    digitalocean: checking for gcc... (cached) gcc
+    digitalocean: checking whether we are using the GNU C compiler... (cached) yes
+    digitalocean: checking whether gcc accepts -g... (cached) yes
+    digitalocean: checking for gcc option to accept ISO C89... (cached) none needed
+    digitalocean: checking for ranlib... ranlib
+    digitalocean: checking for gethostent... yes
+    digitalocean: checking for setsockopt... yes
+    digitalocean: checking for nanosleep... yes
+    digitalocean: checking for ANSI C header files... (cached) yes
+    digitalocean: checking net/bpf.h usability... no
+    digitalocean: checking net/bpf.h presence... no
+    digitalocean: checking for net/bpf.h... no
+    digitalocean: checking sys/ioctl.h usability... yes
+    digitalocean: checking sys/ioctl.h presence... yes
+    digitalocean: checking for sys/ioctl.h... yes
+    digitalocean: checking sys/un.h usability... yes
+    digitalocean: checking sys/un.h presence... yes
+    digitalocean: checking for sys/un.h... yes
+    digitalocean: checking netdb.h usability... yes
+    digitalocean: checking netdb.h presence... yes
+    digitalocean: checking for netdb.h... yes
+    digitalocean: checking for linux/vm_sockets.h... yes
+    digitalocean: checking openssl/ssl.h usability... yes
+    digitalocean: checking openssl/ssl.h presence... yes
+    digitalocean: checking for openssl/ssl.h... yes
+    digitalocean: checking for BIO_int_ctrl in -lcrypto... yes
+    digitalocean: checking for SSL_new in -lssl... yes
+    digitalocean: checking for library containing dlopen... -ldl
+    digitalocean: checking for SSL_set_tlsext_host_name... yes
+    digitalocean: checking for DTLS_client_method... yes
+    digitalocean: checking for SSL_set_alpn_protos... yes
+    digitalocean: configure: creating ./config.status
+    digitalocean: config.status: creating Makefile
+    digitalocean: config.status: creating ../tests/Makefile
+    digitalocean: config.status: creating ../include/nsock_config.h
+    digitalocean:
+    digitalocean:                     ___.-------.___
+    digitalocean:                 _.-' ___.--;--.___ `-._
+    digitalocean:              .-' _.-'  /  .+.  \  `-._ `-.
+    digitalocean:            .' .-'      |-|-o-|-|      `-. `.
+    digitalocean:           (_ <O__      \  `+'  /      __O> _)
+    digitalocean:             `--._``-..__`._|_.'__..-''_.--'
+    digitalocean:                   ``--._________.--''
+    digitalocean:    ____  _____  ____    ____       _       _______
+    digitalocean:   |_   \|_   _||_   \  /   _|     / \     |_   __ \
+    digitalocean:     |   \ | |    |   \/   |      / _ \      | |__) |
+    digitalocean:     | |\ \| |    | |\  /| |     / ___ \     |  ___/
+    digitalocean:    _| |_\   |_  _| |_\/_| |_  _/ /   \ \_  _| |_
+    digitalocean:   |_____|\____||_____||_____||____| |____||_____|
+    digitalocean:
+    digitalocean:   NMAP IS A POWERFUL TOOL -- USE CAREFULLY AND RESPONSIBLY
+    digitalocean: Configured with: openssl zlib libssh2 lua
+    digitalocean: Configured without: localdirs ndiff zenmap nping ncat
+    digitalocean: Type make (or gmake on some *BSD machines) to compile.
+    digitalocean: g++ -MM -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 charpool.cc FingerPrintResults.cc FPEngine.cc FPModel.cc idle_scan.cc MACLookup.cc main.cc nmap.cc nmap_dns.cc nmap_error.cc nmap_ftp.cc NmapOps.cc NmapOutputTable.cc nmap_tty.cc osscan2.cc osscan.cc output.cc payload.cc portlist.cc portreasons.cc protocols.cc scan_engine.cc scan_engine_connect.cc scan_engine_raw.cc scan_lists.cc service_scan.cc services.cc string_pool.cc Target.cc NewTargets.cc TargetGroup.cc targets.cc tcpip.cc timing.cc traceroute.cc utils.cc xml.cc nse_main.cc nse_utility.cc nse_nsock.cc nse_dnet.cc nse_fs.cc nse_nmaplib.cc nse_debug.cc nse_pcrelib.cc nse_lpeg.cc nse_openssl.cc nse_ssl_cert.cc nse_libssh2.cc nse_zlib.cc > makefile.dep
+    digitalocean: Compiling libnetutil
+    digitalocean: cd libnetutil && make
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libnetutil'
+    digitalocean: g++ -MM -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 ./netutil.cc ./PacketElement.cc ./NetworkLayerElement.cc ./ARPHeader.cc ./PacketElement.cc ./NetworkLayerElement.cc ./TransportLayerElement.cc ./ARPHeader.cc ./EthernetHeader.cc ./ICMPv4Header.cc ./ICMPv6Header.cc ./IPv4Header.cc ./IPv6Header.cc ./TCPHeader.cc ./UDPHeader.cc ./RawData.cc ./HopByHopHeader.cc ./DestOptsHeader.cc ./FragmentHeader.cc ./RoutingHeader.cc ./PacketParser.cc > makefile.dep
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing netutil.cc -o netutil.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing PacketElement.cc -o PacketElement.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing NetworkLayerElement.cc -o NetworkLayerElement.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing TransportLayerElement.cc -o TransportLayerElement.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing ARPHeader.cc -o ARPHeader.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing EthernetHeader.cc -o EthernetHeader.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing ICMPv4Header.cc -o ICMPv4Header.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing ICMPv6Header.cc -o ICMPv6Header.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing IPv4Header.cc -o IPv4Header.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing IPv6Header.cc -o IPv6Header.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing TCPHeader.cc -o TCPHeader.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing UDPHeader.cc -o UDPHeader.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing RawData.cc -o RawData.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing HopByHopHeader.cc -o HopByHopHeader.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing DestOptsHeader.cc -o DestOptsHeader.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing FragmentHeader.cc -o FragmentHeader.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing RoutingHeader.cc -o RoutingHeader.o
+    digitalocean: g++ -c -I../liblinear -I../liblua -I../libdnet-stripped/include -I../libssh2/include -I../libpcre  -I../libpcap -I../nbase -I../nsock/include -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing PacketParser.cc -o PacketParser.o
+    digitalocean: rm -f libnetutil.a
+    digitalocean: ar cr libnetutil.a netutil.o PacketElement.o NetworkLayerElement.o TransportLayerElement.o ARPHeader.o EthernetHeader.o ICMPv4Header.o ICMPv6Header.o IPv4Header.o IPv6Header.o TCPHeader.o UDPHeader.o RawData.o HopByHopHeader.o DestOptsHeader.o FragmentHeader.o RoutingHeader.o  PacketParser.o
+    digitalocean: ranlib libnetutil.a
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libnetutil'
+    digitalocean: Compiling liblinear
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/liblinear'
+    digitalocean: g++ -g -O2 -Wall   -Wno-uninitialized -c -o linear.o linear.cpp
+==> digitalocean: linear.cpp: In function ‘model* load_model(const char*)’:
+==> digitalocean: linear.cpp:2224:9: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:  2224 |   fscanf(fp,"%80s",cmd);
+==> digitalocean:       |   ~~~~~~^~~~~~~~~~~~~~~
+==> digitalocean: linear.cpp:2227:10: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:  2227 |    fscanf(fp,"%80s",cmd);
+==> digitalocean:       |    ~~~~~~^~~~~~~~~~~~~~~
+==> digitalocean: linear.cpp:2247:10: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:  2247 |    fscanf(fp,"%d",&nr_class);
+==> digitalocean:       |    ~~~~~~^~~~~~~~~~~~~~~~~~~
+==> digitalocean: linear.cpp:2252:10: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:  2252 |    fscanf(fp,"%d",&nr_feature);
+==> digitalocean:       |    ~~~~~~^~~~~~~~~~~~~~~~~~~~~
+==> digitalocean: linear.cpp:2257:10: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:  2257 |    fscanf(fp,"%lf",&bias);
+==> digitalocean:       |    ~~~~~~^~~~~~~~~~~~~~~~
+==> digitalocean: linear.cpp:2269:11: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:  2269 |     fscanf(fp,"%d",&model_->label[i]);
+==> digitalocean:       |     ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+==> digitalocean: linear.cpp:2296:10: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:  2296 |    fscanf(fp, "%lf ", &model_->w[i*nr_w+j]);
+==> digitalocean:       |    ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==> digitalocean: linear.cpp:2297:9: warning: ignoring return value of ‘int fscanf(FILE*, const char*, ...)’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:  2297 |   fscanf(fp, "\n");
+==> digitalocean:       |   ~~~~~~^~~~~~~~~~
+    digitalocean: g++ -g -O2 -Wall   -Wno-uninitialized -c -o tron.o tron.cpp
+    digitalocean: cd blas; make OPTFLAGS='-g -O2 -Wall   -Wno-uninitialized' CC='gcc';
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/liblinear/blas'
+    digitalocean: gcc -g -O2 -Wall   -Wno-uninitialized -c dnrm2.c
+    digitalocean: gcc -g -O2 -Wall   -Wno-uninitialized -c daxpy.c
+    digitalocean: gcc -g -O2 -Wall   -Wno-uninitialized -c ddot.c
+    digitalocean: gcc -g -O2 -Wall   -Wno-uninitialized -c dscal.c
+    digitalocean: ar rcv blas.a dnrm2.o daxpy.o ddot.o dscal.o
+    digitalocean: a - dnrm2.o
+    digitalocean: a - daxpy.o
+    digitalocean: a - ddot.o
+    digitalocean: a - dscal.o
+    digitalocean: ranlib  blas.a
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/liblinear/blas'
+    digitalocean: ar rcv liblinear.a linear.o tron.o blas/*.o
+    digitalocean: a - linear.o
+    digitalocean: a - tron.o
+    digitalocean: a - blas/daxpy.o
+    digitalocean: a - blas/ddot.o
+    digitalocean: a - blas/dnrm2.o
+    digitalocean: a - blas/dscal.o
+    digitalocean: ranlib liblinear.a
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/liblinear'
+    digitalocean: Compiling libpcap
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libpcap'
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-linux.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-netfilter-linux.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./fad-getad.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./gencode.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./optimize.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./nametoaddr.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./etherent.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./fmtutils.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./savefile.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./sf-pcap.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./sf-pcapng.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./pcap-common.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_image.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_filter.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c ./bpf_dump.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c scanner.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -c grammar.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -o strlcat.o -c ./missing/strlcat.c
+    digitalocean: gcc -fvisibility=hidden  -fpic -I.  -I/usr/local/include -DBUILDING_PCAP -Dpcap_EXPORTS -DHAVE_CONFIG_H  -g -O2    -o strlcpy.o -c ./missing/strlcpy.c
+    digitalocean: ar rc libpcap.a pcap-linux.o pcap-netfilter-linux.o fad-getad.o pcap.o gencode.o optimize.o nametoaddr.o etherent.o fmtutils.o savefile.o sf-pcap.o sf-pcapng.o pcap-common.o bpf_image.o bpf_filter.o bpf_dump.o  scanner.o grammar.o strlcat.o strlcpy.o
+    digitalocean: ranlib libpcap.a
+    digitalocean: ./config.status --file=libpcap.pc.tmp:./libpcap.pc.in
+    digitalocean: config.status: creating libpcap.pc.tmp
+    digitalocean: mv libpcap.pc.tmp libpcap.pc
+    digitalocean: chmod a+x libpcap.pc
+    digitalocean: ./config.status --file=pcap-config.tmp:./pcap-config.in
+    digitalocean: config.status: creating pcap-config.tmp
+    digitalocean: mv pcap-config.tmp pcap-config
+    digitalocean: chmod a+x pcap-config
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libpcap'
+    digitalocean: Compiling libssh2
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: make  all-am
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean:   CC       channel.lo
+    digitalocean:   CC       comp.lo
+    digitalocean:   CC       crypt.lo
+    digitalocean:   CC       hostkey.lo
+    digitalocean:   CC       kex.lo
+    digitalocean:   CC       mac.lo
+    digitalocean:   CC       misc.lo
+    digitalocean:   CC       packet.lo
+    digitalocean:   CC       publickey.lo
+    digitalocean:   CC       scp.lo
+    digitalocean:   CC       session.lo
+    digitalocean:   CC       sftp.lo
+    digitalocean:   CC       userauth.lo
+    digitalocean:   CC       transport.lo
+    digitalocean:   CC       version.lo
+    digitalocean:   CC       knownhost.lo
+    digitalocean:   CC       agent.lo
+    digitalocean:   CC       openssl.lo
+    digitalocean:   CC       pem.lo
+    digitalocean:   CC       keepalive.lo
+    digitalocean:   CC       global.lo
+    digitalocean:   CC       blowfish.lo
+    digitalocean:   CC       bcrypt_pbkdf.lo
+    digitalocean:   CCLD     libssh2.la
+==> digitalocean: ar: `u' modifier ignored since `D' is the default (see `U')
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: cd libssh2/src && make libdir="/lib" prefix="" DESTDIR=/home/op/recon/nmap/libssh2 install-libLTLIBRARIES;
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean:  /usr/bin/mkdir -p '/home/op/recon/nmap/libssh2/lib'
+    digitalocean:  /bin/bash ../libtool   --mode=install /usr/bin/install -c   libssh2.la '/home/op/recon/nmap/libssh2/lib'
+    digitalocean: libtool: install: /usr/bin/install -c .libs/libssh2.so.1.0.1 /home/op/recon/nmap/libssh2/lib/libssh2.so.1.0.1
+    digitalocean: libtool: install: (cd /home/op/recon/nmap/libssh2/lib && { ln -s -f libssh2.so.1.0.1 libssh2.so.1 || { rm -f libssh2.so.1 && ln -s libssh2.so.1.0.1 libssh2.so.1; }; })
+    digitalocean: libtool: install: (cd /home/op/recon/nmap/libssh2/lib && { ln -s -f libssh2.so.1.0.1 libssh2.so || { rm -f libssh2.so && ln -s libssh2.so.1.0.1 libssh2.so; }; })
+    digitalocean: libtool: install: /usr/bin/install -c .libs/libssh2.lai /home/op/recon/nmap/libssh2/lib/libssh2.la
+    digitalocean: libtool: install: /usr/bin/install -c .libs/libssh2.a /home/op/recon/nmap/libssh2/lib/libssh2.a
+    digitalocean: libtool: install: chmod 644 /home/op/recon/nmap/libssh2/lib/libssh2.a
+    digitalocean: libtool: install: ranlib /home/op/recon/nmap/libssh2/lib/libssh2.a
+==> digitalocean: libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: Compiling libpcre
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libpcre'
+    digitalocean: cd . && /bin/bash /home/op/recon/nmap/missing --run aclocal-1.10
+==> digitalocean: /home/op/recon/nmap/missing: line 52: aclocal-1.10: command not found
+==> digitalocean: WARNING: `aclocal-1.10' is missing on your system.  You should only need it if
+==> digitalocean:          you modified `acinclude.m4' or `configure.ac'.  You might want
+==> digitalocean:          to install the `Automake' and `Perl' packages.  Grab them from
+==> digitalocean:          any GNU archive site.
+    digitalocean: cd . && /bin/bash /home/op/recon/nmap/missing --run autoconf
+==> digitalocean: aclocal.m4:16: warning: this file was generated for autoconf 2.63.
+==> digitalocean: You have another version of autoconf.  It may work, but is not guaranteed to.
+==> digitalocean: If you have problems, you may need to regenerate the build system entirely.
+==> digitalocean: To do so, use the procedure documented by the package, typically `autoreconf'.
+    digitalocean: /bin/bash ./config.status --recheck
+    digitalocean: running CONFIG_SHELL=/bin/bash /bin/bash ./configure --disable-option-checking --prefix=/usr/local --without-ndiff --without-zenmap --without-nping --without-ncat --without-nmap-update --with-libpcap=included --cache-file=/dev/null --srcdir=. --no-create --no-recursion
+    digitalocean: checking for a BSD-compatible install... /usr/bin/install -c
+    digitalocean: checking whether build environment is sane... yes
+    digitalocean: checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+    digitalocean: checking for gawk... gawk
+    digitalocean: checking whether make sets $(MAKE)... yes
+    digitalocean: checking for gcc... gcc
+    digitalocean: checking whether the C compiler works... yes
+    digitalocean: checking for C compiler default output file name... a.out
+    digitalocean: checking for suffix of executables...
+    digitalocean: checking whether we are cross compiling... no
+    digitalocean: checking for suffix of object files... o
+    digitalocean: checking whether we are using the GNU C compiler... yes
+    digitalocean: checking whether gcc accepts -g... yes
+    digitalocean: checking for gcc option to accept ISO C89... none needed
+    digitalocean: checking for style of include used by make... GNU
+    digitalocean: checking dependency style of gcc... gcc3
+    digitalocean: checking for ranlib... ranlib
+    digitalocean: checking whether ln -s works... yes
+    digitalocean: checking how to run the C preprocessor... gcc -E
+    digitalocean: checking for grep that handles long lines and -e... /usr/bin/grep
+    digitalocean: checking for egrep... /usr/bin/grep -E
+    digitalocean: checking for ANSI C header files... yes
+    digitalocean: checking for sys/types.h... yes
+    digitalocean: checking for sys/stat.h... yes
+    digitalocean: checking for stdlib.h... yes
+    digitalocean: checking for string.h... yes
+    digitalocean: checking for memory.h... yes
+    digitalocean: checking for strings.h... yes
+    digitalocean: checking for inttypes.h... yes
+    digitalocean: checking for stdint.h... yes
+    digitalocean: checking for unistd.h... yes
+    digitalocean: checking limits.h usability... yes
+    digitalocean: checking limits.h presence... yes
+    digitalocean: checking for limits.h... yes
+    digitalocean: checking for sys/types.h... (cached) yes
+    digitalocean: checking for sys/stat.h... (cached) yes
+    digitalocean: checking dirent.h usability... yes
+    digitalocean: checking dirent.h presence... yes
+    digitalocean: checking for dirent.h... yes
+    digitalocean: checking windows.h usability... no
+    digitalocean: checking windows.h presence... no
+    digitalocean: checking for windows.h... no
+    digitalocean: checking for an ANSI C-conforming const... yes
+    digitalocean: checking for size_t... yes
+    digitalocean: checking for long long... yes
+    digitalocean: checking for unsigned long long... yes
+    digitalocean: checking for bcopy... yes
+    digitalocean: checking for memmove... yes
+    digitalocean: checking for strerror... yes
+    digitalocean: checking for strtoq... yes
+    digitalocean: checking for strtoll... yes
+    digitalocean: checking for _strtoi64... no
+    digitalocean: checking zlib.h usability... yes
+    digitalocean: checking zlib.h presence... yes
+    digitalocean: checking for zlib.h... yes
+    digitalocean: checking for gzopen in -lz... yes
+    digitalocean: checking bzlib.h usability... yes
+    digitalocean: checking bzlib.h presence... yes
+    digitalocean: checking for bzlib.h... yes
+    digitalocean: checking for BZ2_bzopen in -lbz2... yes
+    digitalocean: checking readline/readline.h usability... yes
+    digitalocean: checking readline/readline.h presence... yes
+    digitalocean: checking for readline/readline.h... yes
+    digitalocean: checking readline/history.h usability... yes
+    digitalocean: checking readline/history.h presence... yes
+    digitalocean: checking for readline/history.h... yes
+    digitalocean: checking for readline in -lreadline... yes
+    digitalocean: checking build system type... x86_64-unknown-linux-gnu
+    digitalocean: checking host system type... x86_64-unknown-linux-gnu
+    digitalocean: configure: creating ./config.status
+    digitalocean:  /bin/bash ./config.status
+    digitalocean: config.status: creating Makefile
+    digitalocean: config.status: creating pcre-config
+    digitalocean: config.status: creating config.h
+    digitalocean: config.status: config.h is unchanged
+    digitalocean: config.status: executing depfiles commands
+    digitalocean: config.status: executing script-chmod commands
+    digitalocean: cd . && /bin/bash /home/op/recon/nmap/missing --run autoheader
+    digitalocean: rm -f stamp-h1
+    digitalocean: touch config.h.in
+    digitalocean: cd . && /bin/bash ./config.status config.h
+    digitalocean: config.status: creating config.h
+    digitalocean: config.status: config.h is unchanged
+    digitalocean: make  all-am
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libpcre'
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_compile.o -MD -MP -MF .deps/pcre_compile.Tpo -c -o pcre_compile.o pcre_compile.c
+    digitalocean: mv -f .deps/pcre_compile.Tpo .deps/pcre_compile.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_config.o -MD -MP -MF .deps/pcre_config.Tpo -c -o pcre_config.o pcre_config.c
+    digitalocean: mv -f .deps/pcre_config.Tpo .deps/pcre_config.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_dfa_exec.o -MD -MP -MF .deps/pcre_dfa_exec.Tpo -c -o pcre_dfa_exec.o pcre_dfa_exec.c
+    digitalocean: mv -f .deps/pcre_dfa_exec.Tpo .deps/pcre_dfa_exec.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_exec.o -MD -MP -MF .deps/pcre_exec.Tpo -c -o pcre_exec.o pcre_exec.c
+    digitalocean: mv -f .deps/pcre_exec.Tpo .deps/pcre_exec.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_fullinfo.o -MD -MP -MF .deps/pcre_fullinfo.Tpo -c -o pcre_fullinfo.o pcre_fullinfo.c
+    digitalocean: mv -f .deps/pcre_fullinfo.Tpo .deps/pcre_fullinfo.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_get.o -MD -MP -MF .deps/pcre_get.Tpo -c -o pcre_get.o pcre_get.c
+    digitalocean: mv -f .deps/pcre_get.Tpo .deps/pcre_get.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_globals.o -MD -MP -MF .deps/pcre_globals.Tpo -c -o pcre_globals.o pcre_globals.c
+    digitalocean: mv -f .deps/pcre_globals.Tpo .deps/pcre_globals.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_info.o -MD -MP -MF .deps/pcre_info.Tpo -c -o pcre_info.o pcre_info.c
+    digitalocean: mv -f .deps/pcre_info.Tpo .deps/pcre_info.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_maketables.o -MD -MP -MF .deps/pcre_maketables.Tpo -c -o pcre_maketables.o pcre_maketables.c
+    digitalocean: mv -f .deps/pcre_maketables.Tpo .deps/pcre_maketables.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_newline.o -MD -MP -MF .deps/pcre_newline.Tpo -c -o pcre_newline.o pcre_newline.c
+    digitalocean: mv -f .deps/pcre_newline.Tpo .deps/pcre_newline.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_ord2utf8.o -MD -MP -MF .deps/pcre_ord2utf8.Tpo -c -o pcre_ord2utf8.o pcre_ord2utf8.c
+    digitalocean: mv -f .deps/pcre_ord2utf8.Tpo .deps/pcre_ord2utf8.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_refcount.o -MD -MP -MF .deps/pcre_refcount.Tpo -c -o pcre_refcount.o pcre_refcount.c
+    digitalocean: mv -f .deps/pcre_refcount.Tpo .deps/pcre_refcount.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_study.o -MD -MP -MF .deps/pcre_study.Tpo -c -o pcre_study.o pcre_study.c
+    digitalocean: mv -f .deps/pcre_study.Tpo .deps/pcre_study.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_tables.o -MD -MP -MF .deps/pcre_tables.Tpo -c -o pcre_tables.o pcre_tables.c
+    digitalocean: mv -f .deps/pcre_tables.Tpo .deps/pcre_tables.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_try_flipped.o -MD -MP -MF .deps/pcre_try_flipped.Tpo -c -o pcre_try_flipped.o pcre_try_flipped.c
+    digitalocean: mv -f .deps/pcre_try_flipped.Tpo .deps/pcre_try_flipped.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_ucp_searchfuncs.o -MD -MP -MF .deps/pcre_ucp_searchfuncs.Tpo -c -o pcre_ucp_searchfuncs.o pcre_ucp_searchfuncs.c
+    digitalocean: mv -f .deps/pcre_ucp_searchfuncs.Tpo .deps/pcre_ucp_searchfuncs.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_valid_utf8.o -MD -MP -MF .deps/pcre_valid_utf8.Tpo -c -o pcre_valid_utf8.o pcre_valid_utf8.c
+    digitalocean: mv -f .deps/pcre_valid_utf8.Tpo .deps/pcre_valid_utf8.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_version.o -MD -MP -MF .deps/pcre_version.Tpo -c -o pcre_version.o pcre_version.c
+    digitalocean: mv -f .deps/pcre_version.Tpo .deps/pcre_version.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_xclass.o -MD -MP -MF .deps/pcre_xclass.Tpo -c -o pcre_xclass.o pcre_xclass.c
+    digitalocean: mv -f .deps/pcre_xclass.Tpo .deps/pcre_xclass.Po
+    digitalocean: gcc -DHAVE_CONFIG_H -I.     -O2 -MT pcre_chartables.o -MD -MP -MF .deps/pcre_chartables.Tpo -c -o pcre_chartables.o pcre_chartables.c
+    digitalocean: mv -f .deps/pcre_chartables.Tpo .deps/pcre_chartables.Po
+    digitalocean: rm -f libpcre.a
+    digitalocean: ar cru libpcre.a pcre_compile.o pcre_config.o pcre_dfa_exec.o pcre_exec.o pcre_fullinfo.o pcre_get.o pcre_globals.o pcre_info.o pcre_maketables.o pcre_newline.o pcre_ord2utf8.o pcre_refcount.o pcre_study.o pcre_tables.o pcre_try_flipped.o pcre_ucp_searchfuncs.o pcre_valid_utf8.o pcre_version.o pcre_xclass.o pcre_chartables.o
+==> digitalocean: ar: `u' modifier ignored since `D' is the default (see `U')
+    digitalocean: ranlib libpcre.a
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libpcre'
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libpcre'
+    digitalocean: Compiling libnbase
+    digitalocean: cd nbase && make
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/nbase'
+    digitalocean: gcc -g -O2 -Wall    -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2    -c -o snprintf.o snprintf.c
+    digitalocean: gcc -g -O2 -Wall    -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2    -c -o nbase_time.o nbase_time.c
+    digitalocean: gcc -g -O2 -Wall    -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2    -c -o nbase_str.o nbase_str.c
+    digitalocean: gcc -g -O2 -Wall    -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2    -c -o nbase_misc.o nbase_misc.c
+    digitalocean: gcc -g -O2 -Wall    -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2    -c -o nbase_memalloc.o nbase_memalloc.c
+    digitalocean: gcc -g -O2 -Wall    -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2    -c -o nbase_rnd.o nbase_rnd.c
+    digitalocean: gcc -g -O2 -Wall    -DHAVE_CONFIG_H -D_FORTIFY_SOURCE=2    -c -o nbase_addrset.o nbase_addrset.c
+    digitalocean: rm -f libnbase.a
+    digitalocean: ar cr libnbase.a snprintf.o nbase_time.o nbase_str.o nbase_misc.o nbase_memalloc.o nbase_rnd.o nbase_addrset.o
+    digitalocean: ranlib libnbase.a
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/nbase'
+    digitalocean: Compiling libnsock
+    digitalocean: cd nsock/src && make
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/nsock/src'
+    digitalocean: gcc -MM -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include error.c filespace.c gh_heap.c nsock_connect.c nsock_core.c nsock_iod.c nsock_read.c nsock_timers.c nsock_write.c nsock_ssl.c nsock_event.c nsock_pool.c netutils.c nsock_pcap.c nsock_engines.c engine_select.c engine_epoll.c engine_kqueue.c engine_poll.c nsock_proxy.c nsock_log.c proxy_http.c proxy_socks4.c > makefile.dep
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   error.c -o error.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   filespace.c -o filespace.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   gh_heap.c -o gh_heap.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_connect.c -o nsock_connect.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_core.c -o nsock_core.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_iod.c -o nsock_iod.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_read.c -o nsock_read.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_timers.c -o nsock_timers.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_write.c -o nsock_write.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_ssl.c -o nsock_ssl.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_event.c -o nsock_event.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_pool.c -o nsock_pool.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   netutils.c -o netutils.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_pcap.c -o nsock_pcap.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_engines.c -o nsock_engines.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   engine_select.c -o engine_select.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   engine_epoll.c -o engine_epoll.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   engine_kqueue.c -o engine_kqueue.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   engine_poll.c -o engine_poll.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_proxy.c -o nsock_proxy.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   nsock_log.c -o nsock_log.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   proxy_http.c -o proxy_http.o
+    digitalocean: gcc -c -I/home/op/recon/nmap/libpcap  -I/home/op/recon/nmap/nbase -DHAVE_CONFIG_H -DNSOCK_VERSION=\"0.02\" -D_FORTIFY_SOURCE=2 -I../include -g -O2 -Wall   proxy_socks4.c -o proxy_socks4.o
+    digitalocean: rm -f libnsock.a
+    digitalocean: ar cr libnsock.a error.o filespace.o gh_heap.o nsock_connect.o nsock_core.o nsock_iod.o nsock_read.o nsock_timers.o nsock_write.o nsock_ssl.o nsock_event.o nsock_pool.o netutils.o nsock_pcap.o nsock_engines.o engine_select.o engine_epoll.o engine_kqueue.o engine_poll.o nsock_proxy.o nsock_log.o proxy_http.o proxy_socks4.o
+    digitalocean: ranlib libnsock.a
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/nsock/src'
+    digitalocean: Compiling libdnet
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libdnet-stripped'
+    digitalocean: Making all in include
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: make  all-recursive
+    digitalocean: make[3]: Entering directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: Making all in dnet
+    digitalocean: make[4]: Entering directory '/home/op/recon/nmap/libdnet-stripped/include/dnet'
+    digitalocean: make[4]: Nothing to be done for 'all'.
+    digitalocean: make[4]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/include/dnet'
+    digitalocean: make[4]: Entering directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: make[4]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: make[3]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: Making all in src
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libdnet-stripped/src'
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o addr-util.lo addr-util.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c addr-util.c -o addr-util.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o addr.lo addr.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c addr.c -o addr.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o blob.lo blob.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c blob.c -o blob.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o ip-util.lo ip-util.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c ip-util.c -o ip-util.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o ip6.lo ip6.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c ip6.c -o ip6.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o rand.lo rand.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c rand.c -o rand.o
+==> digitalocean: rand.c: In function ‘rand_open’:
+==> digitalocean: rand.c:81:3: warning: ignoring return value of ‘read’, declared with attribute warn_unused_result [-Wunused-result]
+==> digitalocean:    81 |   read(fd, seed + sizeof(*tv), sizeof(seed) - sizeof(*tv));
+==> digitalocean:       |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o strlcpy.lo strlcpy.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c strlcpy.c -o strlcpy.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o arp-ioctl.lo arp-ioctl.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c arp-ioctl.c -o arp-ioctl.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o eth-linux.lo eth-linux.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c eth-linux.c -o eth-linux.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o fw-none.lo fw-none.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c fw-none.c -o fw-none.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o intf.lo intf.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c intf.c -o intf.o
+==> digitalocean: intf.c: In function ‘intf_set’:
+==> digitalocean: intf.c:220:52: warning: ‘%d’ directive output may be truncated writing between 1 and 10 bytes into a region of size between 0 and 15 [-Wformat-truncation=]
+==> digitalocean:   220 |   snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "%s:%d",
+==> digitalocean:       |                                                    ^~
+==> digitalocean: intf.c:220:48: note: directive argument in the range [1, 2147483647]
+==> digitalocean:   220 |   snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "%s:%d",
+==> digitalocean:       |                                                ^~~~~~~
+==> digitalocean: In file included from /usr/include/stdio.h:867,
+==> digitalocean:                  from intf.c:46:
+==> digitalocean: /usr/include/x86_64-linux-gnu/bits/stdio2.h:67:10: note: ‘__builtin___snprintf_chk’ output between 3 and 27 bytes into a destination of size 16
+==> digitalocean:    67 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+==> digitalocean:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==> digitalocean:    68 |        __bos (__s), __fmt, __va_arg_pack ());
+==> digitalocean:       |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==> digitalocean: intf.c:269:52: warning: ‘%d’ directive output may be truncated writing between 1 and 10 bytes into a region of size between 0 and 15 [-Wformat-truncation=]
+==> digitalocean:   269 |   snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "%s:%d",
+==> digitalocean:       |                                                    ^~
+==> digitalocean: intf.c:269:48: note: directive argument in the range [1, 2147483647]
+==> digitalocean:   269 |   snprintf(ifr.ifr_name, sizeof(ifr.ifr_name), "%s:%d",
+==> digitalocean:       |                                                ^~~~~~~
+==> digitalocean: In file included from /usr/include/stdio.h:867,
+==> digitalocean:                  from intf.c:46:
+==> digitalocean: /usr/include/x86_64-linux-gnu/bits/stdio2.h:67:10: note: ‘__builtin___snprintf_chk’ output between 3 and 27 bytes into a destination of size 16
+==> digitalocean:    67 |   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+==> digitalocean:       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==> digitalocean:    68 |        __bos (__s), __fmt, __va_arg_pack ());
+==> digitalocean:       |        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o ip.lo ip.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c ip.c -o ip.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o route-linux.lo route-linux.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c route-linux.c -o route-linux.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../include  -I../include   -g -O2 -Wall -c -o tun-linux.lo tun-linux.c
+    digitalocean: libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../include -I../include -g -O2 -Wall -c tun-linux.c -o tun-linux.o
+    digitalocean: /bin/bash ../libtool --tag=CC   --mode=link gcc  -g -O2 -Wall -version-info 1:1:0  -o libdnet.la -rpath /usr/local/lib addr-util.lo addr.lo blob.lo ip-util.lo ip6.lo rand.lo strlcpy.lo arp-ioctl.lo eth-linux.lo fw-none.lo intf.lo ip.lo route-linux.lo tun-linux.lo
+    digitalocean: libtool: link: ar cru .libs/libdnet.a  addr-util.o addr.o blob.o ip-util.o ip6.o rand.o strlcpy.o arp-ioctl.o eth-linux.o fw-none.o intf.o ip.o route-linux.o tun-linux.o
+==> digitalocean: ar: `u' modifier ignored since `D' is the default (see `U')
+    digitalocean: libtool: link: ranlib .libs/libdnet.a
+    digitalocean: libtool: link: ( cd ".libs" && rm -f "libdnet.la" && ln -s "../libdnet.la" "libdnet.la" )
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/src'
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libdnet-stripped'
+    digitalocean: make[2]: Nothing to be done for 'all-am'.
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libdnet-stripped'
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libdnet-stripped'
+    digitalocean: Compiling liblua
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/liblua'
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lapi.o lapi.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lcode.o lcode.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lctype.o lctype.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ldebug.o ldebug.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ldo.o ldo.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ldump.o ldump.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lfunc.o lfunc.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lgc.o lgc.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o llex.o llex.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lmem.o lmem.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lobject.o lobject.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lopcodes.o lopcodes.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lparser.o lparser.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lstate.o lstate.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lstring.o lstring.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ltable.o ltable.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ltm.o ltm.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lundump.o lundump.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lvm.o lvm.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lzio.o lzio.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lauxlib.o lauxlib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lbaselib.o lbaselib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lbitlib.o lbitlib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lcorolib.o lcorolib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ldblib.o ldblib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o liolib.o liolib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lmathlib.o lmathlib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o loslib.o loslib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lstrlib.o lstrlib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o ltablib.o ltablib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o lutf8lib.o lutf8lib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o loadlib.o loadlib.c
+    digitalocean: gcc -O2 -Wall -Wextra -DLUA_COMPAT_5_2  -g -O2 -Wall   -DLUA_USE_POSIX -DLUA_USE_DLOPEN   -c -o linit.o linit.c
+    digitalocean: ar rcu liblua.a lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o lauxlib.o lbaselib.o lbitlib.o lcorolib.o ldblib.o liolib.o lmathlib.o loslib.o lstrlib.o ltablib.o lutf8lib.o loadlib.o linit.o
+==> digitalocean: ar: `u' modifier ignored since `D' is the default (see `U')
+    digitalocean: ranlib liblua.a
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/liblua'
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   charpool.cc -o charpool.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   FingerPrintResults.cc -o FingerPrintResults.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   FPEngine.cc -o FPEngine.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   -g0 FPModel.cc -o FPModel.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   idle_scan.cc -o idle_scan.o
+==> digitalocean: In file included from /usr/include/string.h:495,
+==> digitalocean:                  from ./nbase/nbase.h:136,
+==> digitalocean:                  from libnetutil/PacketElement.h:69,
+==> digitalocean:                  from libnetutil/ApplicationLayerElement.h:68,
+==> digitalocean:                  from libnetutil/npacket.h:72,
+==> digitalocean:                  from idle_scan.cc:93:
+==> digitalocean: In function ‘char* strncpy(char*, const char*, size_t)’,
+==> digitalocean:     inlined from ‘void initialize_idleproxy(idle_proxy_info*, char*, Target*, const scan_lists*)’ at idle_scan.cc:552:12,
+==> digitalocean:     inlined from ‘void idle_scan(Target*, u16*, int, char*, const scan_lists*)’ at idle_scan.cc:1372:25:
+==> digitalocean: /usr/include/x86_64-linux-gnu/bits/string_fortified.h:106:34: warning: ‘char* __builtin_strncpy(char*, const char*, long unsigned int)’ specified bound 255 equals destination size [-Wstringop-truncation]
+==> digitalocean:   106 |   return __builtin___strncpy_chk (__dest, __src, __len, __bos (__dest));
+==> digitalocean:       |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==> digitalocean: /usr/include/x86_64-linux-gnu/bits/string_fortified.h:106:34: warning: ‘char* __builtin_strncpy(char*, const char*, long unsigned int)’ specified bound 255 equals destination size [-Wstringop-truncation]
+==> digitalocean: /usr/include/x86_64-linux-gnu/bits/string_fortified.h:106:34: warning: ‘char* __builtin_strncpy(char*, const char*, long unsigned int)’ specified bound 255 equals destination size [-Wstringop-truncation]
+==> digitalocean: In function ‘char* strncpy(char*, const char*, size_t)’,
+==> digitalocean:     inlined from ‘void idle_scan(Target*, u16*, int, char*, const scan_lists*)’ at idle_scan.cc:1373:12:
+==> digitalocean: /usr/include/x86_64-linux-gnu/bits/string_fortified.h:106:34: warning: ‘char* __builtin_strncpy(char*, const char*, long unsigned int)’ specified bound 255 equals destination size [-Wstringop-truncation]
+==> digitalocean:   106 |   return __builtin___strncpy_chk (__dest, __src, __len, __bos (__dest));
+==> digitalocean:       |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   MACLookup.cc -o MACLookup.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap_dns.cc -o nmap_dns.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap_error.cc -o nmap_error.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap.cc -o nmap.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap_ftp.cc -o nmap_ftp.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   NmapOps.cc -o NmapOps.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   NmapOutputTable.cc -o NmapOutputTable.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nmap_tty.cc -o nmap_tty.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   osscan2.cc -o osscan2.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   osscan.cc -o osscan.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   output.cc -o output.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   payload.cc -o payload.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   portlist.cc -o portlist.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   portreasons.cc -o portreasons.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   protocols.cc -o protocols.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   scan_engine.cc -o scan_engine.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   scan_engine_connect.cc -o scan_engine_connect.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   scan_engine_raw.cc -o scan_engine_raw.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   scan_lists.cc -o scan_lists.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   service_scan.cc -o service_scan.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   services.cc -o services.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   string_pool.cc -o string_pool.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   NewTargets.cc -o NewTargets.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   TargetGroup.cc -o TargetGroup.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   Target.cc -o Target.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   targets.cc -o targets.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   tcpip.cc -o tcpip.o
+==> digitalocean: In file included from /usr/include/string.h:495,
+==> digitalocean:                  from ./nbase/nbase.h:136,
+==> digitalocean:                  from tcpip.cc:68:
+==> digitalocean: In function ‘char* strncpy(char*, const char*, size_t)’,
+==> digitalocean:     inlined from ‘int readtcppacket(const u8*, int)’ at tcpip.cc:1180:10:
+==> digitalocean: /usr/include/x86_64-linux-gnu/bits/string_fortified.h:106:34: warning: ‘char* __builtin_strncpy(char*, const char*, long unsigned int)’ specified bound 16 equals destination size [-Wstringop-truncation]
+==> digitalocean:   106 |   return __builtin___strncpy_chk (__dest, __src, __len, __bos (__dest));
+==> digitalocean:       |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==> digitalocean: In function ‘char* strncpy(char*, const char*, size_t)’,
+==> digitalocean:     inlined from ‘int readudppacket(const u8*, int)’ at tcpip.cc:1256:10:
+==> digitalocean: /usr/include/x86_64-linux-gnu/bits/string_fortified.h:106:34: warning: ‘char* __builtin_strncpy(char*, const char*, long unsigned int)’ specified bound 16 equals destination size [-Wstringop-truncation]
+==> digitalocean:   106 |   return __builtin___strncpy_chk (__dest, __src, __len, __bos (__dest));
+==> digitalocean:       |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   timing.cc -o timing.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   traceroute.cc -o traceroute.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   utils.cc -o utils.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   xml.cc -o xml.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_main.cc -o nse_main.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_utility.cc -o nse_utility.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_nsock.cc -o nse_nsock.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_dnet.cc -o nse_dnet.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_fs.cc -o nse_fs.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_nmaplib.cc -o nse_nmaplib.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_debug.cc -o nse_debug.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_pcrelib.cc -o nse_pcrelib.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_lpeg.cc -o nse_lpeg.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_openssl.cc -o nse_openssl.o
+==> digitalocean: nse_openssl.cc: In function ‘int l_rand_pseudo_bytes(lua_State*)’:
+==> digitalocean: nse_openssl.cc:268:34: warning: ‘int RAND_pseudo_bytes(unsigned char*, int)’ is deprecated [-Wdeprecated-declarations]
+==> digitalocean:   268 |   RAND_pseudo_bytes( result, len );
+==> digitalocean:       |                                  ^
+==> digitalocean: In file included from /usr/include/openssl/e_os2.h:13,
+==> digitalocean:                  from /usr/include/openssl/bn.h:14,
+==> digitalocean:                  from nse_openssl.cc:9:
+==> digitalocean: /usr/include/openssl/rand.h:44:1: note: declared here
+==> digitalocean:    44 | DEPRECATEDIN_1_1_0(int RAND_pseudo_bytes(unsigned char *buf, int num))
+==> digitalocean:       | ^~~~~~~~~~~~~~~~~~
+==> digitalocean: nse_openssl.cc:268:34: warning: ‘int RAND_pseudo_bytes(unsigned char*, int)’ is deprecated [-Wdeprecated-declarations]
+==> digitalocean:   268 |   RAND_pseudo_bytes( result, len );
+==> digitalocean:       |                                  ^
+==> digitalocean: In file included from /usr/include/openssl/e_os2.h:13,
+==> digitalocean:                  from /usr/include/openssl/bn.h:14,
+==> digitalocean:                  from nse_openssl.cc:9:
+==> digitalocean: /usr/include/openssl/rand.h:44:1: note: declared here
+==> digitalocean:    44 | DEPRECATEDIN_1_1_0(int RAND_pseudo_bytes(unsigned char *buf, int num))
+==> digitalocean:       | ^~~~~~~~~~~~~~~~~~
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_ssl_cert.cc -o nse_ssl_cert.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_libssh2.cc -o nse_libssh2.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   nse_zlib.cc -o nse_zlib.o
+    digitalocean: g++ -c -I./liblinear -I./liblua -I./libdnet-stripped/include -I./libssh2/include -I./libpcre  -I./libpcap -I./nbase -I./nsock/include -DHAVE_CONFIG_H -DNMAP_PLATFORM=\"x86_64-unknown-linux-gnu\" -DNMAPDATADIR=\"/usr/local/share/nmap\" -D_FORTIFY_SOURCE=2 -g -O2 -Wall -fno-strict-aliasing   main.cc -o main.o
+    digitalocean: Compiling nmap
+    digitalocean: rm -f nmap
+    digitalocean: g++ -Wl,-E  -Lnbase -Lnsock/src/   -o nmap charpool.o FingerPrintResults.o FPEngine.o FPModel.o idle_scan.o MACLookup.o nmap_dns.o nmap_error.o nmap.o nmap_ftp.o NmapOps.o NmapOutputTable.o nmap_tty.o osscan2.o osscan.o output.o payload.o portlist.o portreasons.o protocols.o scan_engine.o scan_engine_connect.o scan_engine_raw.o scan_lists.o service_scan.o services.o string_pool.o NewTargets.o TargetGroup.o Target.o targets.o tcpip.o timing.o traceroute.o utils.o xml.o nse_main.o nse_utility.o nse_nsock.o nse_dnet.o nse_fs.o nse_nmaplib.o nse_debug.o nse_pcrelib.o nse_lpeg.o nse_openssl.o nse_ssl_cert.o nse_libssh2.o nse_zlib.o main.o -lnsock -lnbase libpcre/libpcre.a libpcap/libpcap.a libssh2/lib/libssh2.a -lssl -lcrypto -lz libnetutil/libnetutil.a ./libdnet-stripped/src/.libs/libdnet.a ./liblua/liblua.a ./liblinear/liblinear.a -ldl
+    digitalocean: Compiling libnetutil
+    digitalocean: cd libnetutil && make
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libnetutil'
+    digitalocean: make[1]: Nothing to be done for 'all'.
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libnetutil'
+    digitalocean: Compiling liblinear
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/liblinear'
+    digitalocean: make[1]: 'liblinear.a' is up to date.
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/liblinear'
+    digitalocean: Compiling libpcap
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libpcap'
+    digitalocean: make[1]: Nothing to be done for 'all'.
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libpcap'
+    digitalocean: Compiling libssh2
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: make  all-am
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: cd libssh2/src && make libdir="/lib" prefix="" DESTDIR=/home/op/recon/nmap/libssh2 install-libLTLIBRARIES;
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean:  /usr/bin/mkdir -p '/home/op/recon/nmap/libssh2/lib'
+    digitalocean:  /bin/bash ../libtool   --mode=install /usr/bin/install -c   libssh2.la '/home/op/recon/nmap/libssh2/lib'
+    digitalocean: libtool: install: /usr/bin/install -c .libs/libssh2.so.1.0.1 /home/op/recon/nmap/libssh2/lib/libssh2.so.1.0.1
+    digitalocean: libtool: install: (cd /home/op/recon/nmap/libssh2/lib && { ln -s -f libssh2.so.1.0.1 libssh2.so.1 || { rm -f libssh2.so.1 && ln -s libssh2.so.1.0.1 libssh2.so.1; }; })
+    digitalocean: libtool: install: (cd /home/op/recon/nmap/libssh2/lib && { ln -s -f libssh2.so.1.0.1 libssh2.so || { rm -f libssh2.so && ln -s libssh2.so.1.0.1 libssh2.so; }; })
+    digitalocean: libtool: install: /usr/bin/install -c .libs/libssh2.lai /home/op/recon/nmap/libssh2/lib/libssh2.la
+    digitalocean: libtool: install: /usr/bin/install -c .libs/libssh2.a /home/op/recon/nmap/libssh2/lib/libssh2.a
+    digitalocean: libtool: install: chmod 644 /home/op/recon/nmap/libssh2/lib/libssh2.a
+    digitalocean: libtool: install: ranlib /home/op/recon/nmap/libssh2/lib/libssh2.a
+==> digitalocean: libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libssh2/src'
+    digitalocean: Compiling libpcre
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libpcre'
+    digitalocean: make  all-am
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libpcre'
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libpcre'
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libpcre'
+    digitalocean: Compiling libnbase
+    digitalocean: cd nbase && make
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/nbase'
+    digitalocean: make[1]: Nothing to be done for 'all'.
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/nbase'
+    digitalocean: Compiling libnsock
+    digitalocean: cd nsock/src && make
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/nsock/src'
+    digitalocean: make[1]: Nothing to be done for 'all'.
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/nsock/src'
+    digitalocean: Compiling libdnet
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/libdnet-stripped'
+    digitalocean: Making all in include
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: make  all-recursive
+    digitalocean: make[3]: Entering directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: Making all in dnet
+    digitalocean: make[4]: Entering directory '/home/op/recon/nmap/libdnet-stripped/include/dnet'
+    digitalocean: make[4]: Nothing to be done for 'all'.
+    digitalocean: make[4]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/include/dnet'
+    digitalocean: make[4]: Entering directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: make[4]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: make[3]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/include'
+    digitalocean: Making all in src
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libdnet-stripped/src'
+    digitalocean: make[2]: Nothing to be done for 'all'.
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libdnet-stripped/src'
+    digitalocean: make[2]: Entering directory '/home/op/recon/nmap/libdnet-stripped'
+    digitalocean: make[2]: Nothing to be done for 'all-am'.
+    digitalocean: make[2]: Leaving directory '/home/op/recon/nmap/libdnet-stripped'
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/libdnet-stripped'
+    digitalocean: Compiling liblua
+    digitalocean: make[1]: Entering directory '/home/op/recon/nmap/liblua'
+    digitalocean: make[1]: 'liblua.a' is up to date.
+    digitalocean: make[1]: Leaving directory '/home/op/recon/nmap/liblua'
+    digitalocean: Compiling nmap
+    digitalocean: rm -f nmap
+    digitalocean: g++ -Wl,-E  -Lnbase -Lnsock/src/   -o nmap charpool.o FingerPrintResults.o FPEngine.o FPModel.o idle_scan.o MACLookup.o nmap_dns.o nmap_error.o nmap.o nmap_ftp.o NmapOps.o NmapOutputTable.o nmap_tty.o osscan2.o osscan.o output.o payload.o portlist.o portreasons.o protocols.o scan_engine.o scan_engine_connect.o scan_engine_raw.o scan_lists.o service_scan.o services.o string_pool.o NewTargets.o TargetGroup.o Target.o targets.o tcpip.o timing.o traceroute.o utils.o xml.o nse_main.o nse_utility.o nse_nsock.o nse_dnet.o nse_fs.o nse_nmaplib.o nse_debug.o nse_pcrelib.o nse_lpeg.o nse_openssl.o nse_ssl_cert.o nse_libssh2.o nse_zlib.o main.o -lnsock -lnbase libpcre/libpcre.a libpcap/libpcap.a libssh2/lib/libssh2.a -lssl -lcrypto -lz libnetutil/libnetutil.a ./libdnet-stripped/src/.libs/libdnet.a ./liblua/liblua.a ./liblinear/liblinear.a -ldl
+    digitalocean: /usr/bin/install -c -d /usr/local/bin /usr/local/share/man/man1 /usr/local/share/nmap
+    digitalocean: /usr/bin/install -c -c -m 755 nmap /usr/local/bin/nmap
+    digitalocean: /usr/bin/strip -x /usr/local/bin/nmap
+    digitalocean: /usr/bin/install -c -c -m 644 docs/nmap.1 /usr/local/share/man/man1/
+    digitalocean: if [ "yes" = "yes" ]; then \
+    digitalocean:   for ll in de es fr hr hu it ja pl pt_BR pt_PT ro ru sk zh; do \
+    digitalocean:     /usr/bin/install -c -d /usr/local/share/man/$ll/man1; \
+    digitalocean:     /usr/bin/install -c -c -m 644 docs/man-xlate/nmap-$ll.1 /usr/local/share/man/$ll/man1/nmap.1; \
+    digitalocean:   done; \
+    digitalocean: fi
+    digitalocean: /usr/bin/install -c -c -m 644 docs/nmap.xsl /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 docs/nmap.dtd /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 nmap-services /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 nmap-payloads /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 nmap-rpc /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 nmap-os-db /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 nmap-service-probes /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 nmap-protocols /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 nmap-mac-prefixes /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -d /usr/local/share/nmap/scripts
+    digitalocean: /usr/bin/install -c -d /usr/local/share/nmap/nselib
+    digitalocean: (cd /usr/local/share/nmap/scripts && rm -f anonFTP.nse ASN.nse asn-to-prefix.nse brutePOP3.nse bruteTelnet.nse chargenTest.nse daytimeTest.nse dns-safe-recursion-port.nse dns-safe-recursion-txid.nse dns-test-open-recursion.nse domino-enum-passwords.nse echoTest.nse ftpbounce.nse HTTPAuth.nse HTTP_open_proxy.nse HTTPpasswd.nse HTTPtrace.nse iax2Detect.nse ircServerInfo.nse ircZombieTest.nse mac-geolocation.nse MSSQLm.nse MySQLinfo.nse netbios-smb-os-discovery.nse nfs-acls.nse nfs-dirlist.nse popcapa.nse PPTPversion.nse promiscuous.nse RealVNC_auth_bypass.nse ripeQuery.nse robots.nse showHTMLTitle.nse showHTTPVersion.nse showOwner.nse showSMTPVersion.nse showSSHVersion.nse skype_v2-version.nse smb-enumdomains.nse smb-enumsessions.nse smb-enumshares.nse smb-enumusers.nse smb-serverstats.nse smb-systeminfo.nse SMTPcommands.nse SMTP_openrelay_test.nse smtp-check-vulns.nse SNMPcommunitybrute.nse SNMPsysdescr.nse SQLInject.nse SSH-hostkey.nse SSHv1-support.nse SSLv2-support.nse strangeSMTPport.nse UPnP-info.nse xamppDefaultPass.nse zoneTrans.nse db2-info.nse db2-brute.nse html-title.nse robots.txt.nse xmpp.nse sql-injection.nse http-robtex-reverse-ip.nse http-vuln-zimbra-lfi.nse http-vuln-0-day-lfi-zimbra.nse whois.nse db2-discover.nse http-crossdomainxml.nse http-email-harvest.nse http-wordpress-plugins.nse http-wp-plugins.nse smb-check-vulns.nse)
+    digitalocean: /usr/bin/install -c -c -m 644 nse_main.lua /usr/local/share/nmap/
+    digitalocean: /usr/bin/install -c -c -m 644 scripts/script.db scripts/*.nse /usr/local/share/nmap/scripts
+    digitalocean: /usr/bin/install -c -c -m 644 nselib/*.lua nselib/*.luadoc /usr/local/share/nmap/nselib
+    digitalocean: /usr/bin/install -c -d /usr/local/share/nmap/nselib/data
+    digitalocean: for f in `find nselib/data -name .svn -prune -o -type d -print`; do \
+    digitalocean: 	/usr/bin/install -c -d /usr/local/share/nmap/$f; \
+    digitalocean: done
+    digitalocean: for f in `find nselib/data -name .svn -prune -o -type f -print`; do \
+    digitalocean: 	/usr/bin/install -c -c -m 644 $f /usr/local/share/nmap/$f; \
+    digitalocean: done
+    digitalocean: NMAP SUCCESSFULLY INSTALLED
+    digitalocean: The password for user op is: 6ZnBdW5WzvPhTHz9D8GOesoRgFAWkeqismaMauNnRvh3D2pImpIg68vPCIc4fbBQRDUPHG4GE2ljw596XAs4DahF5gLN3rmcZbbn82SfEikLveuP1f3A0TX07aj
+    digitalocean:
+    digitalocean:
+    digitalocean: Congratulations, your build is almost done!
+    digitalocean:
+    digitalocean:              axiom is sponsored by...
+    digitalocean: ____                       _ _        _____.         _ _
+    digitalocean: / ___|  ___  ___ _   _ _ __(_) |_ _   |_   _| __ __ _(_) |___
+    digitalocean: \___ \ / _ \/ __| | | | '__| | __| | | || || '__/ _` | | / __|
+    digitalocean:  ___) |  __/ (__| |_| | |  | | |_| |_| || || | | (_| | | \__ \
+    digitalocean: |____/ \___|\___|\__,_|_|  |_|\__|\__, ||_||_|  \__,_|_|_|___/
+    digitalocean:                                   |___/
+    digitalocean:
+    digitalocean: Read these while you're waiting to get started :)
+    digitalocean:
+    digitalocean:     - Quickstart Guide: https://github.com/pry0cc/axiom/wiki/A-Quickstart-Guide
+    digitalocean:     - Filesystem Utilities: https://github.com/pry0cc/axiom/wiki/Filesystem-Utilities
+    digitalocean:     - Fleets: https://github.com/pry0cc/axiom/wiki/Fleets
+    digitalocean:     - Scans: https://github.com/pry0cc/axiom/wiki/Scans
+    digitalocean:
+    digitalocean:
+==> digitalocean: Gracefully shutting down droplet...
+==> digitalocean: Creating snapshot: axiom-mybarebones-1695170206
+==> digitalocean: Waiting for snapshot to complete...
+==> digitalocean: Destroying droplet...
+==> digitalocean: Deleting temporary ssh key...
+Build 'digitalocean' finished after 10 minutes 25 seconds.
+
+==> Wait completed after 10 minutes 25 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> digitalocean: A snapshot was created: 'axiom-mybarebones-1695170206' (ID: 140787664) in regions 'nyc1'
+Your build completed successfully in 10 minutes! You should run axiom-update && axiom-build weekly to get the latest and greatest updates!
+To initialize an instance, run axiom-init
+Debug: Saving provisioner to JSON: mybarebones
