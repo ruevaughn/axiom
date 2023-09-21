@@ -9,6 +9,8 @@
     {
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
       "inline": [
+        "echo set debconf to Noninteractive", 
+        "echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections",
         "echo 'Waiting for cloud-init to finish, this can take a few minutes please be patient...'",
         "/usr/bin/cloud-init status --wait",
 
